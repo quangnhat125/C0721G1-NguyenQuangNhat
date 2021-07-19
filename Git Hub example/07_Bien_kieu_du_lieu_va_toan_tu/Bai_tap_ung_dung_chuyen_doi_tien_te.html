@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <table>
-    <input method="Get" action="Bai_tap_ung_dung_chuyen_doi_tien_te.html">
-        <p style="font-weight: bolder; padding-right: 50%;">Amount  From Currency 
-        </p>   
-        <input type="text" name="amount" id="amount" size="10">
-        <p> From Currency</p>
-        <select id="select">
-            <option value="VND">Vietnam</option>
-            <option value="USD">USD</option>
-            <option value="AUD">AUD</option>
-            <option value="CAD">CAD</option>
-        </select>
-        <p>To currency</p>
-        <input type="text" name="cr" id="ketqua" size="10">
-        <input type="button" name="Convert" onclick="Convert ()">
-        
+  </head>
+  <body>
+    <form>
+      <input method="Get" action="Bai_tap_ung_dung_chuyen_doi_tien_te.html" />
+      <p style="font-weight: bolder; padding-right: 50%">
+        Amount From Currency
+      </p>
+      <input type="text" name="amount" id="amount" size="10" />
+      <p>From Currency</p>
+      <select id="select">
+        <option value="VND">Vietnam</option>
+        <option value="USD">USD</option>
+        <option value="AUD">AUD</option>
+        <option value="CAD">CAD</option>
+      </select>
+      <p>To currency</p>
+      <input type="text" name="cr" id="ketqua" size="10" />
+      <input type="button" name="Convert" onclick="Convert ()" />
     </form>
     <script>
-        function Convert () {
-            let x = document.getElementById("amount").value;
+      function Convert() {
+        let x = document.getElementById("amount").value;
         let y = document.getElementById("select").value;
         let z;
         if (y == "VND") {
-            z = x * 1 
+          z = x * 1;
+        } else if (y == "USD") {
+          z = x * 23;
         }
-        else if (y == "USD") {
-            z = x * 23
-        }
-        document.getElementById("ketqua").innerText = z
-        }
+        document.getElementById("ketqua").innerText = z;
+      }
     </script>
-</body>
+  </body>
 </html>
