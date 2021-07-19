@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let inputDiemVatLy;
+      let inputDiemHoaHoc;
+      let inputDiemSinhHoc;
+      inputDiemVatLy = prompt("Nhap vao diem Vat Ly");
+      inputDiemHoaHoc = prompt("Nhap vao diem Hoa Hoc");
+      inputDiemSinhHoc = prompt("Nhap vao diem Sinh Hoc");
+      let DiemVatLy = parseInt(inputDiemVatLy);
+      let DiemHoaHoc = parseInt(inputDiemHoaHoc);
+      let inputDiemSinhHoc = parseInt(inputDiemSinhHoc);
+      let area = (DiemVatLy + DiemHoaHoc + DiemSinhHoc) / 3;
+      document.write("Trung Binh Cong la: " + area);
+    </script>
+  </body>
+</html>
