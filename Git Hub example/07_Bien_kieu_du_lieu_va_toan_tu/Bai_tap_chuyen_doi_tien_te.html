@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng Dụng Chuyển Đổi Tiền Tệ</title>
+</head>
+<body>
+    <form method="GET" action="Bai_tap_chuyen_doi_tien_te.html">
+        <p style="font-weight: bolder;">Amount</p>
+        <input type="text" name="Amount" id="amount" size="10">
+        <p style="font-weight: bolder;"> From Currency</p>
+        <select id="select 1">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+        </select>
+        <p>To Currency</p>
+        <select id="select 2">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+        </select>
+        <input type="text" id="result" name="rt" size="10">
+        <button type="button" onclick="Convert ()">Convert</button>
+    </form>
+    <script>
+        function Convert () {
+        let x = document.getElementById("select 1").value;
+        let y = document.getElementById("select 2").value;
+        let z;
+        if ( y == "VND" && x == "VND" ) {
+            z = x * 1
+         }
+            else if (y == "USD" && x == "VND") {
+                z = x * 23000
+            }
+            else if (y == "AUD") {
+                z = x * 18000
+            }
+            document.getElementById("result").innerText = z;
+        }
+    </script>
+</body>
+</html>
