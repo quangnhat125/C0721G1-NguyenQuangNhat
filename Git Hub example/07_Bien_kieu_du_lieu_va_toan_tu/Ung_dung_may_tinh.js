@@ -1,6 +1,6 @@
 function do_something() {
-  let x = document.getElementById("number1").value;
-  let y = document.getElementById("number2").value;
+  let x = parseInt(document.getElementById("number1").value);
+  let y = parseInt(document.getElementById("number2").value);
   let z = x + y;
   document.getElementById("result").innerText = z;
 }
