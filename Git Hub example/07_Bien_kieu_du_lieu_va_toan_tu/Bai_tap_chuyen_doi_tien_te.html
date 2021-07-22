@@ -8,7 +8,7 @@
   </head>
   <body>
     <form method="GET" action="Bai_tap_chuyen_doi_tien_te.html">
-      <p style="font-weight: bolder">Amount</p>
+      <p style="font-weight: bolder" id="tien">Amount</p>
       <input type="text" name="Amount" id="amount" size="10" />
       <p style="font-weight: bolder">From Currency</p>
       <select id="select 1">
@@ -24,23 +24,10 @@
         <option value="AUD">AUD</option>
         <option value="CAD">CAD</option>
       </select>
-      <input type="text" id="result" name="rt" size="10" />
+      <input type="text" name="rt" size="10" />
+      <p id="tien">Ketqua</p>
       <button type="button" onclick="Convert ()">Convert</button>
     </form>
-    <script>
-      function Convert() {
-        let x = document.getElementById("select 1").value;
-        let y = document.getElementById("select 2").value;
-        let z;
-        if (y == "VND" && x == "VND") {
-          z = x * 1;
-        } else if (y == "USD" && x == "VND") {
-          z = x * 23000;
-        } else if (y == "AUD") {
-          z = x * 18000;
-        }
-        document.getElementById("result").innerText = z;
-      }
-    </script>
+    <script src="chuyen_doi_tien_te.js"></script>
   </body>
 </html>

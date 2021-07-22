@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let inputWeight;
+      let inputHeight;
+      inputWeight = prompt("Enter the Weight");
+      inputHeight = prompt("Enter the Height");
+      let x = parseInt(inputWeight);
+      let y = parseInt(inputHeight);
+      let area = x / (y * 2);
+      if (area < 18) {
+        document.write("Underweight");
+      } else if (area < 25) {
+        document.write("Normal");
+      } else if (area < 30) {
+        document.write("Overweight");
+      } else {
+        document.write("Obese");
+      }
+    </script>
+  </body>
+</html>
