@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("Nhập vào nhiệt độ hiện tại:");
+      while (num < 20 || num > 100) {
+        if (num < 20) {
+          alert("Vui lòng tăng nhiệt độ");
+          num = prompt("Nhập vào nhiệt độ hiện tại:");
+        } else if (num > 100) {
+          alert("Vui lòng hạ nhiệt độ");
+          num = prompt("Nhập vào nhiệt độ hiện tại:");
+        }
+      }
+      alert("Nhiệt độ bình thường");
+    </script>
+  </body>
+</html>
