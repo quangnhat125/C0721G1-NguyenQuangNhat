@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [];
+      let num = prompt("Nhập vào kích thước của mảng: ");
+      for (let i = 0; i < num; i++) {
+        array[i] = parseInt(prompt("Nhập vào phần tử thứ " + i + "là: "));
+      }
+      document.write("Mảng số được khởi tạo là: " + array);
+      for (let i = 0; i < array.length; i++) {
+        let V = parseInt(prompt("Nhập vào số nguyên V: "));
+        if (array[i] == "V") {
+          console.log(V);
+          alert("V có nằm trong mảng số nguyên");
+        } else {
+          alert("V không nằm trong mảng số nguyên");
+        }
+        break;
+      }
+    </script>
+  </body>
+</html>

@@ -9,21 +9,24 @@
   <body>
     <script>
       let array = [];
-      let num = prompt("Nhập vào kích thước của mảng");
+      let num = prompt("nhập vào kích thước của mảng");
       let max = 0;
-      let index = 0;
-
+      let total = 0;
       for (let i = 0; i < num; i++) {
-        array[i] = parseInt(prompt("nhập vào phần tử vị trí: " + i + "là: "));
+        array[i] = parseInt(
+          prompt("Nhập vào giá trị của phần tử thứ " + i + "là:")
+        );
       }
-      document.write("Mảng gồm các phần tử: " + array + "</br>");
+      document.write("Mảng số được khởi tạo là: " + array + "</br>");
       for (let i = 0; i < array.length; i++) {
         if (array[i] > max) {
           max = array[i];
-          index = i;
         }
+        total += array[i];
       }
-      document.write("Phần tử lớn nhất là:" + max + "và ở vị trí" + index);
+      total = total / array.length;
+      document.write("Phần tử lớn nhất trong mảng là: " + max + "</br>");
+      document.write("Tổng trung bình là: " + total);
     </script>
   </body>
 </html>
