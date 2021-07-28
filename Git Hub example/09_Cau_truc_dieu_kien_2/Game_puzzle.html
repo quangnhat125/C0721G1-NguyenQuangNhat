@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<body lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,25 +38,31 @@
         switch (check) {
             case 1:
             if (imgA.getAttribute("src") === "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp") {
-                imgA.src = "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp" ;
-            } else if (imgA.getAttribute("src") === "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp") {
-                imgA.src = "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp" ;
+                imgA.src = "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg" ;
+            } else if (imgA.getAttribute("src") === "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg") {
+                imgA.src = "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png" ;
+            } else {
+              imgA.src = "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp"
             }
             checkImage();
             break;
             case 2:
                 if (imgB.getAttribute("src") === "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg") {
-                    imgB.src = "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg" ;
-                } else if (imgB.getAttribute("src") === "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg") {
-                    imgB.src = "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg" ;
+                    imgB.src = "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp" ;
+                } else if (imgB.getAttribute("src") === "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp") {
+                    imgB.src = "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png" ;
+                } else {
+                  imgB.src = "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg"
                 }
             checkImage();
             break;
             case 3:
                 if (imgC.getAttribute("src") === "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png") {
-                    imgC.src = "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png" ;
-                } else if (imgC.getAttribute("src") === "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png") {
-                    imgC.src = "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png" ;
+                    imgC.src = "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp" ;
+                } else if (imgC.getAttribute("src") === "https://thuvienvector.com/upload/images/thumbs/vector-ban-do-viet-nam-quan-dao-hoang-sa-truong-sa-574.webp") {
+                    imgC.src = "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg" ;
+                } else {
+                  imgC.src = "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png"
                 }
             checkImage();
             break;
@@ -71,7 +77,13 @@
             imgB.getAttribute("src") === "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg" &&
             imgC.getAttribute("src") === "https://visanuocngoai.vn/wp-content/uploads/2021/05/canada-co-bao-nhieu-tinh-bang-300x253.jpg") {
                 alert("Canada")
+        } else if (
+            imgA.getAttribute("src") === "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png" &&
+            imgB.getAttribute("src") === "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png" &&
+            imgC.getAttribute("src") === "https://upload.wikimedia.org/wikipedia/commons/e/e2/Finnish_language_map%2C_detailed_areas.png") {
+                alert("Finland")
         }
     }
+  }
   </script>
 </html>

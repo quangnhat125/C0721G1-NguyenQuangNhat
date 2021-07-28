@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thực hành 1</title>
+  </head>
+  <body>
+    <form method="GET" action="">
+      <input type="text" name="so" id="txtValue" />
+      <input type="button" id="btnAdd" value="Add" onclick="add_element()" />
+      <input
+        type="button"
+        id="btnDisplay"
+        value="Display"
+        onclick="display_array()"
+      />
+      <div id="result"></div>
+    </form>
+    <script>
+      let x = 0;
+      let array = Array();
+      function add_element() {
+        array[x] = document.getElementById("txtValue").value;
+        alert("Element: " + array[x] + " Added at index " + x);
+        x++;
+        document.getElementById("txtValue ").value = "";
+      }
+      function display_array() {
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+          e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [];
+      let array1 = [];
+      let num = prompt("nhập vào kích thước của mảng");
+      for (let i = 0; i < num; i++) {
+        array[i] = prompt("Nhập vào giá trị của phần tử thứ " + i + "là:");
+      }
+      document.write("Mảng số được khởi tạo là: " + array + "</br>");
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] >= 10) {
+          array1.push(array[i]);
+        }
+      }
+      document.write("Các phần tử lớn hơn hoặc bằng 10 là: " + array1);
+    </script>
+  </body>
+</html>
