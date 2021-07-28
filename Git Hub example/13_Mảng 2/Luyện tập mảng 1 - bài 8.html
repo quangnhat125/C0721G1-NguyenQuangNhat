@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let min = 0;
+      let array = [];
+      let num = prompt("nhập độ dài của mảng");
+      for (let i = 0; i < num; i++) {
+        array[i] = parseInt(prompt("Nhập vào phần tử thứ " + i + "là:"));
+      }
+      document.write("Mảng đã cho là" + array + "</br>");
+      for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+          if (array[i] < array[j]) {
+            min = array[i];
+            array[i] = array[j];
+            array[j] = min;
+          }
+        }
+      }
+      document.write("Mảng đã sắp xếp là:" + array);
+    </script>
+  </body>
+</html>

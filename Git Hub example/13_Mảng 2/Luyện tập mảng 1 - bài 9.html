@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [];
+      let array1 = [];
+      let c = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+      ];
+      let num = prompt("Nhập vào kích thước của mảng a");
+      let num1 = prompt("Nhập vào kích thước của mảng b");
+      for (let i = 0; i < num; i++) {
+        array[i] = parseInt(
+          prompt("Nhập vào phần tử thứ " + i + "của bảng a là:")
+        );
+      }
+      document.write("Bảng a được tạo là: " + array + "</br>");
+      for (let j = 0; j < num1; j++) {
+        array1[j] = parseInt(
+          prompt("Nhập vào phần tử thứ " + j + "của bảng b là:")
+        );
+      }
+      document.write("Bảng b được tạo là " + array1);
+      let d = array.concat(array1);
+      c.push(d);
+      console.log(c);
+    </script>
+  </body>
+</html>

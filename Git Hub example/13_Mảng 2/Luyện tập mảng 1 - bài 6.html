@@ -8,21 +8,24 @@
   </head>
   <body>
     <script>
+      let check = false;
       let array = [];
       let num = prompt("Nhập vào kích thước của mảng: ");
       for (let i = 0; i < num; i++) {
         array[i] = parseInt(prompt("Nhập vào phần tử thứ " + i + "là: "));
       }
       document.write("Mảng số được khởi tạo là: " + array);
+      let V = parseInt(prompt("Nhập vào số nguyên V: "));
       for (let i = 0; i < array.length; i++) {
-        let V = parseInt(prompt("Nhập vào số nguyên V: "));
-        if (array[i] == "V") {
-          console.log(V);
-          alert("V có nằm trong mảng số nguyên");
-        } else {
-          alert("V không nằm trong mảng số nguyên");
+        if (array[i] === V) {
+          check = true;
+          break;
         }
-        break;
+      }
+      if (check) {
+        alert("V có trong mảng");
+      } else {
+        alert("V không có trong mảng");
       }
     </script>
   </body>
