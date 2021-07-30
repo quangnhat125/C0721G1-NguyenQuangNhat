@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="songuyento" name="so" />
+    <input type="button" onclick="check()" id="output" value="Click Here" />
+    <script>
+      function isPrime(number) {
+        var check = true;
+        if (number < 2) {
+          return (check = false);
+        } else if (number == 2) {
+          return (check = true);
+        } else {
+          console.log(number);
+          for (let i = 2; i <= Math.sqrt(number); i += 1) {
+            if (number % i == 0) {
+              return false;
+              break;
+            }
+          }
+        }
+        return check;
+      }
+      function check() {
+        let n = parseInt(document.getElementById("songuyento").value);
+        let test = isPrime(n);
+        if (test) {
+          alert(n + "là một số nguyên tố");
+        } else {
+          alert(n + "không là số nguyên tố");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thực hành chuyển đổi nhiệt độ</title>
+  </head>
+  <body>
+    <form>
+      <h1 style="font-weight: bolder">Temperature Converter</h1>
+      <p>
+        Type a value in the Fahrenheit field to convert the value to Celcius:
+      </p>
+      <p>
+        Fahrenheit
+        <input
+          type="number"
+          id="input"
+          placeholder="Enter Fahrenheit"
+          oninput="temperatureConverter(this.value)"
+          onchange="temperatureConverter(this.value)"
+        />
+      </p>
+      <p>Celcius: <span id="output"></span></p>
+    </form>
+    <script>
+      function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("output").innerHTML = (valNum - 32) / 1.8;
+      }
+    </script>
+  </body>
+</html>
