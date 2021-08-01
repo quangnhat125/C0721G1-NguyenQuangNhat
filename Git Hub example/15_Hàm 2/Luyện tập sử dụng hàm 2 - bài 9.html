@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Nhập vào kích thước của mảng:");
+      let array = [];
+      let b = prompt("Nhập vào một kí tự bất kì:");
+      let kiemtra = kiemtraso(b);
+      for (let i = 0; i < a; i++) {
+        array[i] = parseInt(prompt("Nhập vào phần tử thứ " + i + "là: "));
+      }
+      document.write("Mảng đã tạo gồm các kí tự là: " + array);
+      function kiemtraso(b) {
+        let c = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] == b) {
+            c += 1;
+          }
+        }
+        if (c > 0) {
+          return c;
+        } else {
+          return -1;
+        }
+      }
+      if (kiemtra > 0) {
+        document.write("Có " + c + "ký tự" + b + "trong mảng");
+      } else {
+        document.write("Không có dữ liệu trong mảng");
+      }
+    </script>
+  </body>
+</html>

@@ -16,7 +16,7 @@
       <table>
         <tr>
           <td colspan="4">
-            <input type="text" name="display" disabled />
+            <input type="text" name="display" id="kq" />
           </td>
         </tr>
         <tr>
@@ -26,7 +26,7 @@
               name="1"
               value="1"
               id="number1"
-              onclick="click1()"
+              onclick="click('1')"
             />
           </td>
           <td>
@@ -35,7 +35,7 @@
               name="2"
               value="2"
               id="number2"
-              onclick="click2()"
+              onclick="click('2')"
             />
           </td>
           <td>
@@ -44,7 +44,7 @@
               name="3"
               value="3"
               id="number3"
-              onclick="click3()"
+              onclick="click('3')"
             />
           </td>
           <td>
@@ -53,7 +53,7 @@
               name="plus"
               value="+"
               id="cong"
-              onclick="cong()"
+              onclick="click('+'')"
             />
           </td>
         </tr>
@@ -64,7 +64,7 @@
               name="4"
               value="4"
               id="number4"
-              onclick="click4()"
+              onclick="click('4')"
             />
           </td>
           <td>
@@ -73,7 +73,7 @@
               name="5"
               value="5"
               id="number5"
-              onclick="click5()"
+              onclick="click('5')"
             />
           </td>
           <td>
@@ -82,7 +82,7 @@
               name="6"
               value="6"
               id="number6"
-              onclick="click6()"
+              onclick="click('6')"
             />
           </td>
           <td>
@@ -91,7 +91,7 @@
               name="minus"
               value="-"
               id="tru"
-              onclick="tru()"
+              onclick="click('-'')"
             />
           </td>
         </tr>
@@ -102,7 +102,7 @@
               name="7"
               value="7"
               id="number1"
-              onclick="click7()"
+              onclick="click('7')"
             />
           </td>
           <td>
@@ -111,7 +111,7 @@
               name="8"
               value="8"
               id="number2"
-              onclick="click8()"
+              onclick="click('8')"
             />
           </td>
           <td>
@@ -120,7 +120,7 @@
               name="9"
               value="9"
               id="number3"
-              onclick="click9()"
+              onclick="click('9')"
             />
           </td>
           <td>
@@ -129,7 +129,7 @@
               name="times"
               value="*"
               id="nhan"
-              onclick="nhan()"
+              onclick="click('*')"
             />
           </td>
         </tr>
@@ -149,7 +149,7 @@
               name="zero"
               value="0"
               id="number2"
-              onclick="click0()"
+              onclick="click('0')"
             />
           </td>
           <td>
@@ -158,7 +158,7 @@
               name="doit"
               value="="
               id="number3"
-              onclick="click()"
+              onclick="ketqua()"
             />
           </td>
           <td>
@@ -167,14 +167,28 @@
               name="div"
               value="/"
               id="chia"
-              onclick="chia()"
+              onclick="click('/')"
             />
           </td>
         </tr>
       </table>
     </form>
     <script>
-      function click1() {}
+      let x = "";
+      function click(value) {
+        x += value;
+        document.getElementById("kq").innerText = x;
+        document.getElementById("kq").value = x;
+      }
+      function ClickC() {
+        x = "";
+        document.getElementById("kq").innerText = x;
+      }
+      function ketqua() {
+        x = eval(document.getElementById("kq").value);
+        document.getElementById("kq").innerText = x;
+        x = "";
+      }
     </script>
   </body>
 </html>

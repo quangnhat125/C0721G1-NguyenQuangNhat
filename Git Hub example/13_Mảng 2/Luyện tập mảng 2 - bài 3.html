@@ -9,22 +9,18 @@
   <body>
     <script>
       let array = [];
-      let num = prompt("Nhập vào kích thước của mảng: ");
-      for (let i = 0; i < num; i++) {
+      let a = prompt("Nhập vào kích thước của mảng: ");
+      for (let i = 0; i < a; i++) {
         array[i] = parseInt(prompt("Nhập vào phần tử thứ " + i + "là: "));
       }
-      document.write("Mảng số được khởi tạo là: " + array + "</br>");
-      let V = parseInt(prompt("Nhập vào một số bất kì: "));
+      document.write("Mảng đã được tạo là: " + array);
+      let x = 0;
       for (let i = 0; i < array.length; i++) {
-        if (V === array[i]) {
-          while (i < array.length) {
-            array[i] = array[i + 1];
-            i++;
-          }
-          array.push(0);
+        if (!isNaN(array[i])) {
+          x += 1;
         }
       }
-      document.write(array.join(" "));
+      document.write("Mảng này có " + x + " ký tự số");
     </script>
   </body>
 </html>

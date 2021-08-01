@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Nhập vào độ dài của mảng: ");
+      let array = [];
+      for (let i = 0; i < a; i++) {
+        array[i] = parseInt(prompt("Nhập vào phần tử thứ " + i + " là: "));
+      }
+      document.write("Mảng đã cho gồm các phần tử là: " + array + "</br>");
+      function timmin(array) {
+        let min;
+        for (let i = 0; i < array.length; i++) {
+          min = array[0];
+          if (array[i] < min) {
+            min = array[i];
+          }
+        }
+        document.write("Phần tử nhỏ nhất là:" + min);
+      }
+      timmin(array);
+    </script>
+  </body>
+</html>
