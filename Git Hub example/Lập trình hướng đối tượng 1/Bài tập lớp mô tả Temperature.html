@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class nhietDo {
+        constructor(doC) {
+          this.doC = doC;
+        }
+        getDoC() {
+          return this.doC;
+        }
+        changeCtoF() {
+          if (this.doC > -273) {
+            return this.doC * 1.8 + 32;
+          } else {
+            return alert("Vui lòng nhập lại giá trị!");
+          }
+        }
+        changeCtoK() {
+          if (this.doC > -273) {
+            return this.doC + 273.15;
+          } else {
+            return alert("Vui lòng nhập lại giá trị!");
+          }
+        }
+      }
+      let a = parseFloat(prompt("Nhập vào giá trị độ C: "));
+      let doC = new nhietDo(a);
+      let F = doC.changeCtoF();
+      let K = doC.changeCtoK();
+
+      alert("Nhiệt độ sau khi chuyển là " + F);
+      alert("Nhiệt độ sau khi chuyển là " + K);
+    </script>
+  </body>
+</html>

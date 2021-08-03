@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Rectangle {
+        constructor(dai, rong) {
+          this.dai = dai;
+          this.rong = rong;
+        }
+        dienTich() {
+          return this.dai * this.rong;
+        }
+        chuVi() {
+          return (this.dai + this.rong) * 2;
+        }
+        changeDai() {
+          this.dai = Math.Random * this.dai;
+          this.rong = Math.Random * this.rong;
+        }
+      }
+      let a = new Rectangle(4, 5);
+      let b = a.dienTich();
+      let c = a.chuVi();
+      alert("Hình chữ nhật có diện tích " + b + "và chu vi là " + c);
+      a.changeDai();
+      alert(b + c);
+    </script>
+  </body>
+</html>

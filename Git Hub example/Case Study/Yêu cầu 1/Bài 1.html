@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = parseInt(prompt("Nhập vào chiều dài của hình chữ nhật: "));
+      let b = parseInt(prompt("Nhập vào chiều rộng của hình chữ nhật: "));
+      for (let i = 0; i < a; i++) {
+        for (let j = 0; j < b; j++) {
+          if (i === 0 || i === a - 1 || j === 0 || j === b - 1) {
+            document.write("* ");
+          } else {
+            document.writeln("&nbsp&nbsp");
+          }
+        }
+        document.writeln("<br>");
+      }
+    </script>
+  </body>
+</html>
