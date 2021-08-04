@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study bài 1 - yêu cầu 2</title>
+  </head>
+  <body>
+    <!-- <h1>Chương trình nhập lương nhân viên</h1>
+    <h4>Lương của nhân viên</h4>
+    <input type="number" id="salary" />
+    <h4>Thuế thu nhập</h4>
+    <input type="number" id="tax" />
+    <h4>Lương ròng</h4>
+    <input type="text" id="income" />
+    <input type="button" value="Tính toán" onclick="cal()" />
+    <script>
+      //   let a = document.getElementById("salary").value;
+      //   console.log(a);
+      //   if (a >= 15) {
+      //     document.getElementById("tax").innerText = 0.2 * a;
+      //   } else if (a >= 7) {
+      //     document.getElementById("tax").innerText = 0.1 * a;
+      //   } else {
+      //     document.getElementById("tax").innerText = 0.05 * a;
+      //   }
+
+      function cal() {
+        let a = document.getElementById("salary").value;
+        console.log(a);
+        if (a >= 15000000) {
+          document.getElementById("tax").innerHTML = 0.2 * a;
+        } else if (a >= 7000000) {
+          document.getElementById("tax").innerHTML = 0.1 * a;
+        } else {
+          document.getElementById("tax").innerHTML = 0.05 * a;
+        }
+      } -->
+    <script>
+      let a = parseInt(prompt("Nhập vào lương của bạn: "));
+      if (a >= 15000000) {
+        document.write(
+          "Thuế thu nhập của bạn là " +
+            0.2 * a +
+            "VND" +
+            "và lương ròng của bạn là " +
+            (a - 0.2 * a) +
+            "VND"
+        );
+      } else if (a >= 7000000) {
+        document.write(
+          "Thuế thu nhập của bạn là " +
+            0.1 * a +
+            "VND" +
+            "và lương ròng của bạn là " +
+            (a - 0.1 * a) +
+            "VND"
+        );
+      } else {
+        document.write(
+          "Thuế thu nhập của bạn là " +
+            0.05 * a +
+            "VND" +
+            "và lương ròng của bạn là " +
+            (a - 0.05 * a) +
+            "VND"
+        );
+      }
+    </script>
+  </body>
+</html>

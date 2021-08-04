@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam và Eva</title>
+  </head>
+  <body>
+    <script>
+      class Human {
+        constructor(name, gender, weight) {
+          this.name = name;
+          this.gender = gender;
+          this.weight = weight;
+        }
+        isMale() {
+          if (this.gender) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        setGender(gender) {
+          this.gender = gender;
+        }
+        eat(Apple) {
+          Apple.decrease();
+          this.weight += 1;
+        }
+        checkApple(Apple) {
+          if (Apple.weight > 0) {
+            return true;
+          }
+        }
+        say(voice) {
+          alert(voice);
+        }
+        getWeight() {
+          return this.weight;
+        }
+        setWeight(weight) {
+          this.weight = weight;
+        }
+        getName() {
+          return this.name;
+        }
+      }
+      class apple {
+        constructor(weight) {
+          this.weight = weight;
+        }
+        decrease() {
+          this.weight--;
+        }
+        isEmpty() {
+          if (this.weight > 0) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+        getWeight() {
+          return this.weight;
+        }
+      }
+      let Adam = new Human("Adam", true, 80);
+      let Eva = new Human("Eva", false, 60);
+      let Apple = new apple(10);
+      Adam.say("Hi");
+      Eva.say("Hello");
+      console.log(Adam.say);
+      console.log(Eva.say);
+      console.log("quả táo còn:  " + Apple.getWeight() + "kg");
+      while (!Apple.isEmpty()) {
+        console.log("Adam đã cắn 1 miếng táo");
+        Adam.eat(Apple);
+        console.log("quả táo còn:  " + Apple.getWeight() + "kg");
+        console.log("Eva cắn 1  miếng táo");
+        Eva.eat(Apple);
+        console.log("quả táo còn:  " + Apple.getWeight() + "kg");
+      }
+      console.log("Quả táo đã bị cắn hết");
+    </script>
+  </body>
+</html>
