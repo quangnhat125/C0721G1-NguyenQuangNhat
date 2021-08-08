@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yêu cầu 3 - Bài 4</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("Hãy nhập vào 1 dãy số: ");
+      let digits = num.toString().split("");
+      let realDigits = digits.map(Number);
+      let result = [];
+      console.log(realDigits);
+      for (let i = 0; i < realDigits.length; i++) {
+        switch (realDigits[i]) {
+          case 0:
+            result.push("không");
+            break;
+          case 1:
+            result.push("một");
+            break;
+          case 2:
+            result.push("hai");
+            break;
+          case 3:
+            result.push("ba");
+            break;
+          case 4:
+            result.push("bốn");
+            break;
+          case 5:
+            result.push("năm");
+            break;
+          case 6:
+            result.push("sáu");
+            break;
+          case 7:
+            result.push("bảy");
+            break;
+          case 8:
+            result.push("tám");
+            break;
+          case 9:
+            result.push("chín");
+            break;
+        }
+      }
+      document.write(result.join(" "));
+    </script>
+  </body>
+</html>

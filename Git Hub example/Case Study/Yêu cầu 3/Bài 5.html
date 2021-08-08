@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yêu cầu 3 - Bài 5</title>
+  </head>
+  <body>
+    <h1>Form Order đồ uống</h1>
+    <select>
+      <option>1 .Coffee</option>
+      <option>2. Cam Vắt</option>
+      <option>3. Nước ép cà rốt</option>
+      <option>4. Nước ép cà chua</option>
+      <option>5. Nước lọc</option>
+      <option>6. Nước dừa</option>
+      <option>7. Thoát gọi món</option>
+    </select>
+    <h2>Đơn giá: <span id="dongia"></span></h2>
+
+    <script>
+      do {
+        let a = parseInt(prompt("Nhập vào món bạn muốn order: "));
+        let c;
+        switch (a) {
+          case 1:
+            var b = parseInt(prompt("Nhập vào số lượng bạn muốn gọi: "));
+            alert("Bạn chọn món Coffee với số lượng là " + b);
+            c = 20000 * b;
+            document.getElementById("dongia").innerHTML = c;
+            break;
+          case 2:
+            var b = parseInt(prompt("Nhập vào số lượng bạn muốn gọi: "));
+            alert("Bạn chọn món Cam Vắt với số lượng là " + b);
+            c = 30000 * b;
+            document.getElementById("dongia").innerHTML = c;
+            break;
+          case 3:
+            var b = parseInt(prompt("Nhập vào số lượng bạn muốn gọi: "));
+            alert("Bạn chọn món Nước ép cà rốt với số lượng là " + b);
+            c = 30000 * b;
+            document.getElementById("dongia").innerHTML = c;
+            break;
+          case 4:
+            var b = parseInt(prompt("Nhập vào số lượng bạn muốn gọi: "));
+            alert("Bạn chọn món Nước ép cà chua với số lượng là " + b);
+            c = 30000 * b;
+            document.getElementById("dongia").innerHTML = c;
+            break;
+          case 5:
+            var b = parseInt(prompt("Nhập vào số lượng bạn muốn gọi: "));
+            alert("Bạn chọn món Nước lọc với số lượng là " + b);
+            c = 10000 * b;
+            document.getElementById("dongia").innerHTML = c;
+            break;
+          case 6:
+            var b = parseInt(prompt("Nhập vào số lượng bạn muốn gọi: "));
+            alert("Bạn chọn món Nước dừa với số lượng là " + b);
+            c = 40000 * b;
+            document.getElementById("dongia").innerHTML = c;
+            break;
+          default:
+            alert("Không tồn tại món này!");
+        }
+      } while (a !== 7);
+    </script>
+  </body>
+</html>

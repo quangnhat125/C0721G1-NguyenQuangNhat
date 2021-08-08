@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yêu cầu 4 - Bài 3</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Nhập vào một chuỗi kí tự thứ 1: ");
+      let b = prompt("Nhập vào một chuối kí tự thứ 2: ");
+      let array1 = [];
+      let array2 = [];
+      let result = [];
+      let count = 0;
+      array1 = a.split("", a.length);
+      array2 = b.split("", b.length);
+      console.log(array1);
+      console.log(array2);
+      for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
+          if (array1[i] == array2[j]) {
+            result.push(array1[i]);
+            count++;
+            break;
+          }
+        }
+      }
+      console.log(array2);
+      document.write(
+        "2 mảng có các kí tự giống nhau là: " +
+          result +
+          "và số lần lặp là: " +
+          count
+      );
+    </script>
+  </body>
+</html>

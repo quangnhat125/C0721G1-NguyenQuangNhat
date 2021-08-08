@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yêu cầu 3 - Bài 1</title>
+  </head>
+  <body>
+    <script>
+      let array = [];
+      let a = prompt("Nhập vào kích thước của mảng");
+      let sum = 0;
+      for (let i = 0; i < a; i++) {
+        array[i] = parseInt(prompt("Nhập vào giá trị thứ " + i + "là: "));
+      }
+      document.write("Mảng nhập vào là: " + array + "</br>");
+      let array1 = [];
+      for (let j = 0; j < array.length; j++) {
+        sum += array[j];
+        array1[j] = sum;
+      }
+      document.write("Mảng kết quả là : " + array1);
+    </script>
+  </body>
+</html>

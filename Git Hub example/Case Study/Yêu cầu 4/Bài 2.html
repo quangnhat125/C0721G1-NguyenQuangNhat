@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yêu cầu 4 - Bài 2</title>
+  </head>
+  <body>
+    <script>
+      let n = prompt("Nhập vào kích thước của mảng: ");
+      let array = [];
+      let array1 = [];
+      for (let i = 0; i < n; i++) {
+        array[i] = parseInt(prompt("Nhập vào phần tử thứ " + i + "là: "));
+      }
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] != array[i + 1]) {
+          array1.push(array[i]);
+        }
+      }
+      document.write("Mảng đã tạo có các phần tử khác nhau là: " + array1);
+    </script>
+  </body>
+</html>

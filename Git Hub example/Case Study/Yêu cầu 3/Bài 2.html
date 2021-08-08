@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yêu cầu 3 - Bài 2</title>
+  </head>
+  <body>
+    <script>
+      let array1 = [];
+      let array2 = [];
+      let a = prompt("Nhập vào kích thước mảng 1: ");
+      let b = prompt("Nhập vào kích thước mảng 2: ");
+      let c;
+      let missArray = [];
+      for (let i = 0; i < a; i++) {
+        array1[i] = parseInt(
+          prompt("Nhập vào phần tử thứ " + i + " của mảng 1 là: ")
+        );
+      }
+      document.write("Mảng 1 được tạo là: " + array1 + "</br>");
+      for (let j = 0; j < b; j++) {
+        array2[j] = parseInt(
+          prompt("Nhập vào phần tử thứ " + j + " của mảng 2 là: ")
+        );
+      }
+      document.write("Mảng 2 được tạo là: " + array2 + "</br>");
+      for (let i = 0; i < array2.length; i++) {
+        if (!array1.includes(array2[i])) {
+          missArray.push(array2[i]);
+        }
+      }
+      document.write(missArray);
+    </script>
+  </body>
+</html>
