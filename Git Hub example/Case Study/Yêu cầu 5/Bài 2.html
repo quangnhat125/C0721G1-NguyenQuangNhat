@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let m = prompt("Nhập vào độ dài của mảng: ");
+      let n = prompt("Nhập vào độ rộng của mảng: ");
+      let count = 0;
+      let array = [[]];
+      let result = [];
+      function kiemtrasnt(a) {
+        // var ketqua = true;
+        if (a < 2) {
+          return false;
+        } else if (a == 2) {
+          return true;
+        } else if (a % 2 == 0) {
+          return false;
+        } else {
+          for (let i = 2; i <= Math.sqrt(a); i += 1) {
+            if (a % i == 0) {
+              return false;
+              break;
+            }
+          }
+        }
+        return true;
+      }
+      //   let count = 0;
+      //   let array = [[]];
+      //   let result = [];
+      for (let i = 0; i < n; i++) {
+        array[i] = [];
+        for (let j = 0; j < m; j++) {
+          array[i][j] = parseInt(
+            prompt("Nhập vào phần tử thứ " + j + " của mảng " + i)
+          );
+          if (kiemtrasnt(array[i][j])) {
+            count++;
+            console.log(count);
+            result.push(array[i][j]);
+            console.log(result);
+          }
+        }
+      }
+      document.write("Các số nguyên tố có trong mảng là: " + result + "</br>");
+      document.write("Có tất cả " + count + " số nguyên tố trong mảng.");
+    </script>
+  </body>
+</html>
