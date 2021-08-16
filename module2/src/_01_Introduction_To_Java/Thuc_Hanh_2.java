@@ -1,3 +1,5 @@
+package _01_Introduction_To_Java;
+
 public class Thuc_Hanh_2 {
     public static void main(String[] args) {
         int i = 10;

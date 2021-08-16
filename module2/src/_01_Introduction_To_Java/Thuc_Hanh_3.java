@@ -1,3 +1,5 @@
+package _01_Introduction_To_Java;
+
 import java.util.Scanner;
 
 public class Thuc_Hanh_3 {
