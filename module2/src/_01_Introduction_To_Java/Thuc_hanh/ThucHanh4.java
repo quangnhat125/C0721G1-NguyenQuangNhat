@@ -2,7 +2,7 @@ package _01_Introduction_To_Java;
 
 import java.util.Scanner;
 
-public class Thuc_Hanh_4 {
+public class ThucHanh4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double a,b,c;

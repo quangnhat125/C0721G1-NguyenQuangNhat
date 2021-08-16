@@ -1,6 +1,6 @@
 package _01_Introduction_To_Java;
 
-public class Thuc_Hanh_2 {
+public class ThucHanh2 {
     public static void main(String[] args) {
         int i = 10;
         float f = 20.5f;
