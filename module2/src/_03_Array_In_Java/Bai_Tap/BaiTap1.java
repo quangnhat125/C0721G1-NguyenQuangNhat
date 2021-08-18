@@ -3,7 +3,7 @@ package _03_Array_In_Java.Bai_Tap;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Baitap1 {
+public class BaiTap1 {
     //    public static void main(String[] args) {
 //        int[] array = {10, 4, 6, 7, 8, 6, 0, 0, 0, 0};
 //        int a = 7;
