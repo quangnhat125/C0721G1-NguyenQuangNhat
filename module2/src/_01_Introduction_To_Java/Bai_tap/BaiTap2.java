@@ -9,72 +9,93 @@ public class BaiTap2 {
         int number = scanner.nextInt();
         int donVi = number % 10;
         int chuc = number / 10;
+        String a = "";
+        String b = "";
         if (number < 10) {
             switch (number) {
                 case 1:
-                    System.out.print("One");
+                    a = "One";
+//                    System.out.print("One");
                     break;
                 case 2:
-                    System.out.print("Two");
+                    a = "Two";
+//                    System.out.print("Two");
                     break;
                 case 3:
-                    System.out.print("Three");
+                    a = "Three";
+//                    System.out.print("Three");
                     break;
                 case 4:
-                    System.out.print("Four");
+                    a = "Four";
+//                    System.out.print("Four");
                     break;
                 case 5:
-                    System.out.print("Five");
+                    a = "Five";
+//                    System.out.print("Five");
                     break;
                 case 6:
-                    System.out.print("Six");
+                    a = "Six";
+//                    System.out.print("Six");
                     break;
                 case 7:
-                    System.out.print("Seven");
+                    a = "Seven";
+//                    System.out.print("Seven");
                     break;
                 case 8:
-                    System.out.print("Eight");
+                    a = "Eight";
+//                    System.out.print("Eight");
                     break;
                 case 9:
-                    System.out.print("Nine");
+                    a = "Nine";
+//                    System.out.print("Nine");
                     break;
             }
         }
             if (number <= 12) {
                 switch (number) {
                     case 10:
-                        System.out.println("Ten");
+                        a = "Ten";
+//                        System.out.println("Ten");
                         break;
                     case 11:
-                        System.out.println("Elevent");
+                        a = "Eveven";
+//                        System.out.println("Eleven");
                         break;
                     case 12:
-                        System.out.println("Twelve");
+                        a = "Twelve";
+//                        System.out.println("Twelve");
                         break;
                 }
             }
                 if (number < 20) {
                     switch (donVi) {
                         case 3:
-                            System.out.println("Thirdteen");
+                            b = "Thirteen";
+//                            System.out.println("Thirteen");
                             break;
                         case 4:
-                            System.out.println("Fourteen");
+                            b = "Fourteen";
+//                            System.out.println("Fourteen");
                             break;
                         case 5:
-                            System.out.println("Fifteen");
+                            b = "Fifteen";
+//                            System.out.println("Fifteen");
                             break;
                         case 6:
-                            System.out.println("Sixteen");
+                            b = "Sixteen";
+//                            System.out.println("Sixteen");
                             break;
                         case 7:
-                            System.out.println("Seventeen");
+                            b = "Seventeen";
+//                            System.out.println("Seventeen");
                             break;
                         case 8:
-                            System.out.println("Eighteen");
+                            b = "Eighteen";
+//                            System.out.println("Eighteen");
                             break;
                         case 9:
-                            System.out.println("Nineteen");
+                            b = "Nineteen";
+//                            System.out.println("Nineteen");
                             break;
                     }
                 }
@@ -87,7 +108,7 @@ public class BaiTap2 {
                             System.out.println("Thirty");
                             break;
                         case 4:
-                            System.out.println("Fourty");
+                            System.out.println("Forty");
                             break;
                         case 5:
                             System.out.println("Fifty");
@@ -106,6 +127,7 @@ public class BaiTap2 {
                             break;
                     }
                 }
+        System.out.println();
 
         }
 
