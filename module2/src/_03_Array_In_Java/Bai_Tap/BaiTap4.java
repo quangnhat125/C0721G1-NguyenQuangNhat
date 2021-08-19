@@ -20,7 +20,7 @@ public class BaiTap4 {
         System.out.println("Ma trận đã nhập vào là: ");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + "\t");
+                System.out.print(matrix[i][j]+ " ");
             }
             System.out.println();
         }
