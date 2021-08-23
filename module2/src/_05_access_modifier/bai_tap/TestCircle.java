@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class TestCircle {
     public static void main(String[] args){
-        Circle circle1 = new Circle();
+        Circle1 circle1 = new Circle1();
         circle1.setRadius(10);
         System.out.println("Area of circle1 is: " + circle1.getArea());
-        Circle circle2 = new Circle(15);
+        Circle1 circle2 = new Circle1(15);
         System.out.println("Area of circle2 is: " + circle2.getArea());
 
     }

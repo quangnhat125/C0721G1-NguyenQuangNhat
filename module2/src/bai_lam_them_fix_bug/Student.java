@@ -1,9 +1,34 @@
 package bai_lam_them_fix_bug;
 
+import java.util.Arrays;
+
 public class Student {
     private static String school = "Codegym";
     private String name;
-    private  int AGE;
+    private  int age;
+    private Address address;
+
+    public Student(String name, int age, Address address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Student() {
     }
@@ -24,24 +49,12 @@ public class Student {
         this.name = name;
     }
 
-    public int getAGE() {
-        return AGE;
-    }
-
-    public void setAGE(int AGE) {
-        this.AGE = AGE;
-    }
-
-    public Student(String name, int AGE) {
-        this.name = name;
-        this.AGE = AGE;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", AGE=" + AGE +
+                "name='" + getName() + '\'' +
+                ", AGE=" + getAge() +
+                "Adrress: " + getAddress() +
                 '}';
     }
 }

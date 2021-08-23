@@ -1,12 +1,12 @@
 package _05_access_modifier.bai_tap;
 
-public class Circle {
+public class Circle1 {
     private double radius = 1.0;
     private String color = "red";
 
-    public Circle() {
+    public Circle1() {
     }
-    public Circle(double radius) {
+    public Circle1(double radius) {
         this.radius = radius;
     }
     public void setRadius(double radius) {
