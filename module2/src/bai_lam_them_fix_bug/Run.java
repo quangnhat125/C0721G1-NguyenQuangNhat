@@ -8,7 +8,7 @@ public class Run {
             System.out.println("Chọn chức năng\n" +
                     "1.Add\n" +
                     "2.show" +
-                    "3.Exti");
+                    "3.Exit");
             System.out.println("Chọn");
             Scanner scanner = new Scanner(System.in);
             int choose = Integer.parseInt(scanner.nextLine());
@@ -19,7 +19,10 @@ public class Run {
                 case 2:
                     StudentManager.display();
                     break;
-
+                case 3:
+                    System.exit(0);
+                default:
+                    System.out.println("Vui long nhap lai!");
             }
         }
     }

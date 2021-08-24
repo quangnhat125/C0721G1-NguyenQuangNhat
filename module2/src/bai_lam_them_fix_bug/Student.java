@@ -5,13 +5,16 @@ import java.util.Arrays;
 public class Student {
     private static String school = "Codegym";
     private String name;
-    private  int age;
+    private int age;
     private Address address;
 
     public Student(String name, int age, Address address) {
         this.name = name;
         this.age = age;
         this.address = address;
+    }
+
+    public Student() {
     }
 
     public int getAge() {
@@ -28,9 +31,6 @@ public class Student {
 
     public void setAddress(Address address) {
         this.address = address;
-    }
-
-    public Student() {
     }
 
     public static String getSchool() {
@@ -54,7 +54,7 @@ public class Student {
         return "Student{" +
                 "name='" + getName() + '\'' +
                 ", AGE=" + getAge() +
-                "Adrress: " + getAddress() +
+                ", Address: " + getAddress() +
                 '}';
     }
 }

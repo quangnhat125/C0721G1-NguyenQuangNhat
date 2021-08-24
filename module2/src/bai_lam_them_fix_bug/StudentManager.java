@@ -40,6 +40,7 @@ public class StudentManager {
         Student student = new Student(name, age, address);
         for (int i = 0; i < studentList.length; i++) {
             if (studentList[i] == null) {
+                Address address1 = new Address(houseNumber, street, ward, district, province);
                 studentList[i] = student;
                 break;
             }

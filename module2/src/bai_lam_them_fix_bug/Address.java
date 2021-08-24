@@ -57,4 +57,7 @@ public class Address {
     public void setProvince(String province) {
         this.province = province;
     }
+    public String toString() {
+        return "HouseNumber: " + getHouseNumber() + ", Street: " + getStreet() + ", Ward: " + getWard() + ", District: " + getDistrict() + ", Province: " + getProvince();
+    }
 }
