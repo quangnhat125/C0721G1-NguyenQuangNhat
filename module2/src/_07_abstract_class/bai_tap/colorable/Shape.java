@@ -1,5 +1,4 @@
-package _06_inheritance.thuc_hanh;
-
+package _07_abstract_class.bai_tap.colorable;
 
 public class Shape {
     public String color = "green";

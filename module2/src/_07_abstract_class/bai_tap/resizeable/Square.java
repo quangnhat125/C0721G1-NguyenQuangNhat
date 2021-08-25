@@ -1,4 +1,4 @@
-package _07_abstract_class.bai_tap;
+package _07_abstract_class.bai_tap.resizeable;
 
 import _06_inheritance.thuc_hanh.Rectangle;
 
