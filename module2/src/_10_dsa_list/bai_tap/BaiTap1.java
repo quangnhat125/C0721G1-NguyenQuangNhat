@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 class MyList<E> {
     int size = 0;
-    static final int DEFAULT_CAPACITY = 0;
+    static final int DEFAULT_CAPACITY = 10;
     private Object elements[];
 
     public MyList() {
@@ -55,11 +55,17 @@ class MyList<E> {
     }
 
     public E get(int index) {
-        if (index >= size || index < 0) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + index);
-        }
+        checkIndex(index);
         return (E) elements[index];
     }
+
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size)
+            throw new IndexOutOfBoundsException
+                    ("index " + index + " out of bounds");
+    }
+
+
 }
 
 class MyListTest {
@@ -69,6 +75,8 @@ class MyListTest {
         myList.add(1, 2);
         myList.add(2, 3);
         myList.add(3, 4);
-
+        for (int i = 0; i < myList.size(); i++) {
+            System.out.println(myList.get(i));
+        }
     }
 }
