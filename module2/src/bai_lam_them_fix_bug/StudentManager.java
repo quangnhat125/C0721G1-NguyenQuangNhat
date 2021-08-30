@@ -11,7 +11,6 @@ public class StudentManager {
         studentList[2] = new Student("chanh2", 20,null);
 
     }
-
     public static void add() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập tên");
@@ -25,7 +24,7 @@ public class StudentManager {
 //                break;
 //            }
 //        }
-        Address address;
+        Address address = null;
         System.out.println("Nhập số nhà: ");
         String houseNumber = scanner.nextLine();
         System.out.println("Nhập đường: ");
@@ -36,7 +35,8 @@ public class StudentManager {
         String district = scanner.nextLine();
         System.out.println("Nhập tỉnh/thành phố: ");
         String province = scanner.nextLine();
-        address = new Address(houseNumber, street, ward, district, province);
+//        address = new Address(houseNumber, street, ward, district, province);
+
         Student student = new Student(name, age, address);
         for (int i = 0; i < studentList.length; i++) {
             if (studentList[i] == null) {

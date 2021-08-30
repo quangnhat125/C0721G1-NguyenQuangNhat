@@ -7,7 +7,7 @@ public class Run {
         while (true) {
             System.out.println("Chọn chức năng\n" +
                     "1.Add\n" +
-                    "2.show" +
+                    "2.show\n" +
                     "3.Exit");
             System.out.println("Chọn");
             Scanner scanner = new Scanner(System.in);
