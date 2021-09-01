@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let a = prompt("Nhập vào kích thước của mảng tử số: ");
+      // let b = prompt("Nhập vào kích thước của mảng mẫu số: ");
+      // let array1 = [];
+      // let array2 = [];
+      // for (let i = 0; i < a; i++) {
+      //   array1[i] = parseInt(
+      //     prompt("Nhập vào phần tử thứ " + i + "của mảng tử số: ")
+      //   );
+      // }
+      // document.write("Mảng tử số có các phần tử là: " + array1 + "</br>");
+      // for (let j = 0; j < b; j++) {
+      //   array2[j] = parseInt(
+      //     prompt("Nhập vào phần tử thứ " + j + "của mảng mẫu số: ")
+      //   );
+      // }
+      // document.write("Mảng mẫu số có các phần tử là: " + array2);
+      let tuso1 = parseInt(prompt("Nhập vào tử số 1: "));
+      let tuso2 = parseInt(prompt("Nhập vào tử số 2: "));
+      let mauso1 = parseInt(prompt("Nhập vào mẫu số 1: "));
+      let mauso2 = parseInt(prompt("Nhập vào mẫu số 2: "));
+      if (mauso1 == 0 && mauso2 == 0) {
+        alert("mẫu số không xác định");
+      } else {
+        kiemtra();
+      }
+      function kiemtra() {
+        if (tuso1 * mauso2 === tuso2 * mauso1) {
+          alert("Phân số bằng nhau!");
+        } else {
+          alert("Phân số không bằng nhau");
+        }
+      }
+    </script>
+  </body>
+</html>

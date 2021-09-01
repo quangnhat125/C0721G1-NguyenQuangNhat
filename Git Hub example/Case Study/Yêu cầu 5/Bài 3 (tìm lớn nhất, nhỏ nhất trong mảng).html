@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let m = prompt("Nhập vào độ dài của mảng: ");
+      let n = prompt("Nhập vào độ rộng cua mảng: ");
+      let array = [[]];
+      console.log(array);
+      for (let i = 0; i < m; i++) {
+        array[i] = [];
+        for (let j = 0; j < n; j++) {
+          array[i][j] = parseInt(
+            prompt("Nhập vào phần tử thứ " + j + "của mảng " + i)
+          );
+        }
+      }
+      function tim(array) {
+        console.log(array);
+        let max = array[0][0];
+        let min = array[0][0];
+        for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array[i].length; j++) {
+            if (max < array[i][j]) {
+              max = array[i][j];
+            }
+            if (min > array[i][j]) {
+              min = array[i][j];
+            }
+          }
+        }
+        document.write("Max là: " + max + "<br>" + "Min là: " + min);
+      }
+      tim(array);
+      // var max = array[0][0];
+      // for (let i = 0; i < array.length; i++) {
+      //   for (let j = 0; j < array[i].length; j++) {
+      //     if (max < array[i][j]) {
+      //       max = array[i][j];
+      //     }
+      //   }
+      // }
+      // var min = array[0][0];
+      // for (let i = 0; i < array.length; i++) {
+      //   for (let j = 0; j < array[i].length; j++) {
+      //     if (min > array[i][j]) {
+      //       min = array[i][j];
+      //     }
+      //   }
+      // }
+      tim(array);
+      // document.write("Phần tử lớn nhất trong mảng là: " + max + "</br>");
+      // document.write("Phần tử nhỏ nhất trong mảng là: " + min);
+    </script>
+  </body>
+</html>

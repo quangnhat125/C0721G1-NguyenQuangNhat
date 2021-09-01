@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>Thêm mới sản phẩm</h1>
+    <input type="text" id="name" placeholder="Nhập tên sản phẩm" />
+    <input type="text" id="production" placeholder="Nhập tên Nhà sản xuất" />
+    <input type="text" id="price" placeholder="Nhập giá sản phẩm" />
+    <input type="text" id="amount" placeholder="Nhập số lượng sản phẩm" />
+    <input type="button" onclick="themSP()" value="Thêm Sản Phẩm" />
+    <div id="output"></div>
+  </body>
+  <script>
+    class SanPham {
+      constructor(ten, nhaSX, gia, soLuong) {
+        this._ten = ten;
+        this._nhaSX = nhaSX;
+        this._gia = gia;
+        this._soLuong = soLuong;
+      }
+
+      getten() {
+        return this._ten;
+      }
+
+      setten(value) {
+        this._ten = value;
+      }
+
+      getnhaSX() {
+        return this._nhaSX;
+      }
+
+      setnhaSX(value) {
+        this._nhaSX = value;
+      }
+
+      getgia() {
+        return this._gia;
+      }
+
+      setgia(value) {
+        this._gia = value;
+      }
+
+      getsoLuong() {
+        return this._soLuong;
+      }
+
+      setsoLuong(value) {
+        this._soLuong = value;
+      }
+    }
+    let array = [];
+    let sanPham1 = new SanPham("tivi", "LG", 5000, 10);
+    let sanPham2 = new SanPham("laptop", "Dell", 10000, 50);
+    let sanPham3 = new SanPham("car", "BMW", 1000000, 2);
+    array.push(sanPham1);
+    array.push(sanPham2);
+    array.push(sanPham3);
+    console.log(array);
+    display();
+    function display() {
+      let table =
+        "<table style='border-collapse: collapse' border='1px'>+" +
+        "<tr><th>Name of Product</th>" +
+        "<th>Producer</th>" +
+        "<th>Price</th>" +
+        "<th>Amount</th></tr>";
+      for (let i = 0; i < array.length; i++) {
+        table +=
+          "<tr>" +
+          "<td>" +
+          array[i].getten() +
+          "</td>" +
+          "<td>" +
+          array[i].getnhaSX() +
+          "</td>" +
+          "<td>" +
+          array[i].getgia() +
+          "</td>" +
+          "<td>" +
+          array[i].getsoLuong() +
+          "</td>" +
+          "<td><input type='button' onclick='Edit(" +
+          i +
+          " )' value='Edit'></td>" +
+          "<td><input type='button' onclick='delSP(" +
+          i +
+          " )'value='Delete'></td></tr>";
+      }
+      document.getElementById("output").innerHTML = table;
+    }
+    function themSP() {
+      let tenSP = document.getElementById("name").value;
+      let nhaSX = document.getElementById("production").value;
+      let gia = document.getElementById("price").value;
+      let soluong = document.getElementById("amount").value;
+      document.getElementById("name").value = "";
+      document.getElementById("production").value = "";
+      document.getElementById("price").value = "";
+      document.getElementById("amount").value = "";
+      let sanpham = new SanPham(tenSP, nhaSX, gia, soluong);
+      array.push(sanpham);
+      display();
+    }
+    function Edit(index) {
+      console.log(index);
+      array[index].setten(prompt("Nhập tên sản phẩm bạn muốn sửa"));
+      array[index].setnhaSX(
+        prompt("Nhập tên nhà sản xuất của sản phẩm bạn muốn sửa")
+      );
+      array[index].setgia(prompt("Nhập giá của sản phẩm bạn muốn sửa"));
+      array[index].setsoLuong(
+        prompt("Nhập số lượng của sản phẩm bạn muốn sửa")
+      );
+      display();
+      alert("Đã sửa xong !!");
+    }
+    function delSP(index) {
+      if (confirm("Bạn có chắc chắn muốn xóa ???")) {
+        array.splice(index, 1);
+        display();
+        alert("Đã xóa xong");
+      }
+    }
+  </script>
+</html>

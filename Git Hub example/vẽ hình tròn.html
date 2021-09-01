@@ -7,12 +7,14 @@
     <title>Document</title>
   </head>
   <body>
+    <canvas id="chunhat" width="500" height="300" style="border: solid; 1px">
+    </canvas>
     <script>
-      let value = 0;
-      do {
-        value = prompt("Nhập vào số từ 1 -> 10");
-      } while (value < 1 || value > 10);
-      alert("Số bạn vừa nhập là " + value);
+      let canvas = document.getElementById("chunhat");
+      let ctx = canvas.getContext("2d");
+      ctx.beginPath();
+      ctx.arc(200, 100, 100, 0, Math.PI * 2);
+      ctx.stroke();
     </script>
   </body>
 </html>

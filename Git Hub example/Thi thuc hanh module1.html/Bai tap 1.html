@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = parseInt(prompt("Nhập vào số lượng phần tử trong mảng: "));
+      let arrayA = [];
+      let arrayB = [];
+      if (a <= 50) {
+        for (let i = 0; i < a; i++) {
+          arrayA[i] = parseInt(
+            prompt("Nhập vào phần tử thứ " + i + "của mảng: ")
+          );
+        }
+        document.write("Mảng a mới được tạo là: " + arrayA + "</br>");
+      } else {
+        document.write("Vui lòng nhập lại kích thước của mảng!");
+      }
+      function kiemtrasnt(a) {
+        if (a < 2) {
+          return false;
+        } else if (a == 2) {
+          return true;
+        } else if (a % 2 == 0) {
+          return false;
+        } else {
+          for (let i = 2; i <= Math.sqrt(a); i += 1) {
+            if (a % i == 0) {
+              return false;
+              break;
+            }
+          }
+        }
+        return true;
+      }
+      for (let i = 0; i < arrayA.length; i++) {
+        if (kiemtrasnt(arrayA[i])) {
+          arrayB.push(arrayA[i]);
+        }
+      }
+      document.write("Mảng mới gồm các số nguyên tố là: " + arrayB);
+    </script>
+  </body>
+</html>

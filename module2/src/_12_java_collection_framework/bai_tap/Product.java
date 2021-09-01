@@ -1,29 +1,40 @@
 package _12_java_collection_framework.bai_tap;
 
 public class Product {
-    private static String company = "Honda";
+    private int id;
+    private String company;
     private String nameCar;
     private double price;
 
     public Product() {
     }
 
-    public Product(String company, String nameCar, double price) {
+    public Product(int id, String company, String nameCar, double price) {
+        this.id = id;
         this.company = company;
         this.nameCar = nameCar;
         this.price = price;
     }
 
-//    public Product(String newNameCar, double newPrice) {
-//    }
-
-    public static String getCompany() {
+    public String getCompany() {
         return company;
     }
 
-    public static void setCompany(String company) {
-        Product.company = company;
+    public void setCompany(String company) {
+        this.company = company;
     }
+//    public Product(String newNameCar, double newPrice) {
+//    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 
     public String getNameCar() {
         return nameCar;
@@ -43,6 +54,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Car: " + getNameCar() + " belong to company " + getCompany() + " with the price $" + getPrice();
+        return "ID: " + getId() +" Car: " + getNameCar() + ", company: " + getCompany() + " with the price $" + getPrice();
     }
 }

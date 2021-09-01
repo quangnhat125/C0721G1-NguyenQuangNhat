@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Thông tin sổ tiết kiệm</h1>
+    <input type="button" onclick="addSo()" value="Thêm sổ" />
+    <input type="button" onclick="delSo(this.maso)" value="Delete" />
+    <div id="output"></div>
+    <div id="input"></div>
+    <script>
+      class SoTietKiem {
+        constructor(maSo, loaiSo, ten, cmt, ngayMo, soTien) {
+          this.maSo = maSo;
+          this.loaiSo = loaiSo;
+          this.ten = ten;
+          this.cmt = cmt;
+          this.ngayMo = ngayMo;
+          this.soTien = soTien;
+        }
+        getmaSo() {
+          return this.maSo;
+        }
+        setmaSo(value) {
+          this.maSo = value;
+        }
+        getloaiSo() {
+          return this.loaiSo;
+        }
+        setloaiSo(value) {
+          this.loaiSo = value;
+        }
+        getten() {
+          return this.ten;
+        }
+        setten(value) {
+          this.ten = value;
+        }
+        getcmt() {
+          return this.cmt;
+        }
+        setcmt(value) {
+          this.cmt = value;
+        }
+        getngayMo() {
+          return this.ngayMo;
+        }
+        setngayMo(value) {
+          this.ngayMo = value;
+        }
+        getsoTien() {
+          return this.soTien;
+        }
+        setsoTien(value) {
+          this.soTien = value;
+        }
+      }
+      let array = [];
+      let so1 = new SoTietKiem(
+        "ABC1",
+        "Kì 3 tháng",
+        "Lê Anh Kha",
+        200178888,
+        "12/03/2018",
+        50000000
+      );
+      let so2 = new SoTietKiem(
+        "ABC2",
+        "Kì 5 tháng",
+        "Lê Anh Hòa",
+        200176666,
+        "10/12/2018",
+        40000000
+      );
+      let so3 = new SoTietKiem(
+        "ABC3",
+        "Kì 7 tháng",
+        "Lê Anh Đức",
+        200175555,
+        "05/05/2018",
+        40000000
+      );
+      array.push(so1);
+      array.push(so2);
+      array.push(so3);
+      console.log(array);
+      display();
+      function display() {
+        let table =
+          "<table style='border-collapse: collapse' border='1px'>+" +
+          "<tr><th>Mã số</th>" +
+          "<th>Loại sổ</th>" +
+          "<th>Họ và tên</th>" +
+          "<th>Số chứng minh</th>" +
+          "<th>Ngày mở sổ</th>" +
+          "<th>Số tiền gởi</th></tr>";
+        for (let i = 0; i < array.length; i++) {
+          table +=
+            "<tr>" +
+            "<td>" +
+            array[i].getmaSo() +
+            "</td>" +
+            "<td>" +
+            array[i].getloaiSo() +
+            "</td>" +
+            "<td>" +
+            array[i].getten() +
+            "</td>" +
+            "<td>" +
+            array[i].getcmt() +
+            "</td>" +
+            "<td>" +
+            array[i].getngayMo() +
+            "</td>" +
+            "<td>" +
+            array[i].getsoTien() +
+            "</td></tr>";
+        }
+        document.getElementById("output").innerHTML = table;
+      }
+      function addSo() {
+        let maSo1 = prompt("Nhập vào mã số của sổ tiết kiệm mới: ");
+        let loaiSo1 = prompt("Nhập vào loại sổ muốn mở: ");
+        let ten1 = prompt("Nhập vào họ và tên chủ sổ: ");
+        let cmt1 = prompt("Nhập vào số chứng minh thư:");
+        let ngayMo1 = prompt("Nhập vào ngày mở sổ: ");
+        let soTien1 = prompt("Nhập vào số tiền muốn gởi: ");
+        let so4 = new SoTietKiem(maSo1, loaiSo1, ten1, cmt1, ngayMo1, soTien1);
+        array.push(so4);
+        this.maSo1 === this.maSo;
+        alert("Đã trùng mã số!");
+        let maSo1 = prompt("Vui lòng nhập lại mã sổ mới: ");
+
+        alert("Đã thêm thành công!");
+        display();
+      }
+      function delSo(a) {
+        let maSoXoa = prompt("Nhập vào mã số sổ muốn xóa: ");
+        // console.log(this.maSo);
+        // console.log(maSoXoa);
+        if (this.maSoXoa == this.maSo) {
+          if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+            array.splice(index, 1);
+            display();
+            alert("Đã xóa xong!");
+          }
+        } else {
+          alert("Mã số sổ không tồn tại!");
+          let maSoXoa = prompt("Nhập lại mã số muốn xóa: ");
+          display();
+        }
+      }
+    </script>
+  </body>
+</html>

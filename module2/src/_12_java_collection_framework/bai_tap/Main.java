@@ -7,14 +7,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         while (true) {
 //        Scanner sc = new Scanner(System.in);
-        System.out.println("Menu: \n 1. Add \n 2.Edit \n 3. Delete \n 4. Display \n 5. Search \n 6. Sort" );
+        System.out.println("Menu: \n 1. Add \n 2. Edit \n 3. Delete \n 4. Display \n 5. Search \n 6. Sort" );
         int choice = Integer.parseInt(sc.nextLine());
            switch (choice) {
                case 1:
                    ProductManager.add();
                    break;
+               case 2:
+                   ProductManager.edit();
+                   break;
+               case 3:
+                   ProductManager.delete();
+                   break;
                case 4:
                    ProductManager.display();
+                   break;
+               case 5:
+                   ProductManager.search();
+                   break;
+               case 6:
+                   ProductManager.sortUpByValue();
                    break;
                default:
                    System.out.println("Vui lòng nhập lại!");
