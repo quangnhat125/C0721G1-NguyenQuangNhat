@@ -1,44 +1,36 @@
 package case_study.models;
 
 public class House extends Facility{
-    private String extendedKitchen;
-    private String kidsPlayground;
-    private String serviceIncluded;
+    private String roomStandard;
+    private int numberOfFloor;
 
-    public House(String extendedKitchen, String kidsPlayground) {
-        this.extendedKitchen = extendedKitchen;
-        this.kidsPlayground = kidsPlayground;
+    public House(String roomStandard, int numberOfFloor) {
+        this.roomStandard = roomStandard;
+        this.numberOfFloor = numberOfFloor;
     }
 
-    public House(double area, int roomNumber, int numberOfBedroom, String extendedKitchen, String kidsPlayground) {
-        super(area, roomNumber, numberOfBedroom);
-        this.extendedKitchen = extendedKitchen;
-        this.kidsPlayground = kidsPlayground;
+    public House(String nameOfService, double area, int roomRate, int maximumPeople, String typeOfRent, String roomStandard, int numberOfFloor) {
+        super(nameOfService, area, roomRate, maximumPeople, typeOfRent);
+        this.roomStandard = roomStandard;
+        this.numberOfFloor = numberOfFloor;
+    }
+    public House() {
 
     }
-    public House(){}
 
-    public String getExtendedKitchen() {
-        return extendedKitchen;
+    public String getRoomStandard() {
+        return roomStandard;
     }
 
-    public void setExtendedKitchen(String extendedKitchen) {
-        this.extendedKitchen = extendedKitchen;
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
     }
 
-    public String getKidsPlayground() {
-        return kidsPlayground;
+    public int getNumberOfFloor() {
+        return numberOfFloor;
     }
 
-    public void setKidsPlayground(String kidsPlayground) {
-        this.kidsPlayground = kidsPlayground;
-    }
-
-    public String getServiceIncluded() {
-        return serviceIncluded;
-    }
-
-    public void setServiceIncluded(String serviceIncluded) {
-        this.serviceIncluded = serviceIncluded;
+    public void setNumberOfFloor(int numberOfFloor) {
+        this.numberOfFloor = numberOfFloor;
     }
 }

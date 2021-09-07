@@ -1,17 +1,21 @@
 package case_study.models;
 
 public abstract class Facility {
+    private String nameOfService;
     private double area;
-    private int roomNumber;
-    private int numberOfBedroom;
+    private int roomRate;
+    private int maximumPeople;
+    private String typeOfRent;
 
     public Facility() {
     }
 
-    public Facility(double area, int roomNumber, int numberOfBedroom) {
+    public Facility(String nameOfService,double area, int roomRate, int maximumPeople, String typeOfRent) {
+        this.nameOfService = nameOfService;
         this.area = area;
-        this.roomNumber = roomNumber;
-        this.numberOfBedroom = numberOfBedroom;
+        this.roomRate = roomRate;
+        this.maximumPeople = maximumPeople;
+        this.typeOfRent = typeOfRent;
     }
 
     public double getArea() {
@@ -22,19 +26,35 @@ public abstract class Facility {
         this.area = area;
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public int getRoomRate() {
+        return roomRate;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setRoomRate(int roomRate) {
+        this.roomRate = roomRate;
     }
 
-    public int getNumberOfBedroom() {
-        return numberOfBedroom;
+    public int getMaximumPeople() {
+        return maximumPeople;
     }
 
-    public void setNumberOfBedroom(int numberOfBedroom) {
-        this.numberOfBedroom = numberOfBedroom;
+    public void setMaximumPeople(int maximumPeople) {
+        this.maximumPeople = maximumPeople;
+    }
+
+    public String getTypeOfRent() {
+        return typeOfRent;
+    }
+
+    public void setTypeOfRent(String typeOfRent) {
+        this.typeOfRent = typeOfRent;
+    }
+
+    public String getNameOfService() {
+        return nameOfService;
+    }
+
+    public void setNameOfService(String nameOfService) {
+        this.nameOfService = nameOfService;
     }
 }

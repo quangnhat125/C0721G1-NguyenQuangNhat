@@ -1,43 +1,46 @@
 package case_study.models;
 
 public class Villa extends Facility {
-    private String pool;
-    private String promotionExclusive;
-    private String breakfastIncluded;
+    private String roomStandard;
+    private String poolArea;
+    private int numberOfFloor;
 
-    public Villa(String pool) {
-        this.pool = pool;
+    public Villa(String roomStandard) {
+        this.roomStandard = roomStandard;
     }
 
-    public Villa(double area, int roomNumber, int numberOfBedroom, String pool) {
-        super(area, roomNumber, numberOfBedroom);
-        this.pool = pool;
+    public Villa(String nameOfService, double area, int roomRate, int maximumPeople, String typeOfRent, String roomStandard, String poolArea, int numberOfFloor) {
+        super(nameOfService, area, roomRate, maximumPeople, typeOfRent);
+        this.roomStandard = roomStandard;
+        this.poolArea = poolArea;
+        this.numberOfFloor = numberOfFloor;
     }
+
     public Villa() {
 
     }
 
-    public String getPool() {
-        return pool;
+    public String getRoomStandard() {
+        return roomStandard;
     }
 
-    public void setPool(String pool) {
-        this.pool = pool;
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
     }
 
-    public String getPromotionExclusive() {
-        return promotionExclusive;
+    public String getPoolArea() {
+        return poolArea;
     }
 
-    public void setPromotionExclusive(String promotionExclusive) {
-        this.promotionExclusive = promotionExclusive;
+    public void setPoolArea(String poolArea) {
+        this.poolArea = poolArea;
     }
 
-    public String getBreakfastIncluded() {
-        return breakfastIncluded;
+    public int getNumberOfFloor() {
+        return numberOfFloor;
     }
 
-    public void setBreakfastIncluded(String breakfastIncluded) {
-        this.breakfastIncluded = breakfastIncluded;
+    public void setNumberOfFloor(int numberOfFloor) {
+        this.numberOfFloor = numberOfFloor;
     }
 }

@@ -1,36 +1,28 @@
 package case_study.models;
 
 public class Room extends Facility {
-    private int roomType;
-    private String roomService;
+    private String freeServiceIncluded;
 
-    public Room(int roomType, String roomService) {
-        this.roomType = roomType;
-        this.roomService = roomService;
+    public Room(String freeServiceIncluded) {
+        this.freeServiceIncluded = freeServiceIncluded;
     }
 
-    public Room(double area, int roomNumber, int numberOfBedroom, int roomType, String roomService) {
-        super(area, roomNumber, numberOfBedroom);
-        this.roomType = roomType;
-        this.roomService = roomService;
+    public Room(String nameOfService, double area, int roomRate, int maximumPeople, String typeOfRent, String freeServiceIncluded) {
+        super(nameOfService, area, roomRate, maximumPeople, typeOfRent);
+        this.freeServiceIncluded = freeServiceIncluded;
     }
-    public Room() {
+    public Room(){
 
     }
 
-    public int getRoomType() {
-        return roomType;
+    public String getFreeServiceIncluded() {
+        return freeServiceIncluded;
     }
 
-    public void setRoomType(int roomType) {
-        this.roomType = roomType;
-    }
-
-    public String getRoomService() {
-        return roomService;
-    }
-
-    public void setRoomService(String roomService) {
-        this.roomService = roomService;
+    public void setFreeServiceIncluded(String freeServiceIncluded) {
+        this.freeServiceIncluded = freeServiceIncluded;
     }
 }
+
+
+
