@@ -21,22 +21,7 @@ import java.util.List;
 ////            e.printStackTrace();
 ////        }
 ////    }
-//    public static void main(String[] args) {
-//        try {
-//
-//            File file = new File("src\\_17_iotextfile\\bai_tap\\bai_tap_2\\countries");
-//            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-//            String line = "";
-//
-//            while ((line = bufferedReader.readLine()) != null){
-//                System.out.println(line);
-//            }
-//
-//        }catch (Exception e){
-//            System.err.println("Fie không tồn tại or nội dung có lỗi!");
-//        }
-//    }
-//}
+
  class Main {
     public static void main(String[] args) {
 
