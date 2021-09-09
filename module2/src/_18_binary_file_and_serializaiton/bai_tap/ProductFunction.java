@@ -26,20 +26,20 @@ public class ProductFunction {
         System.out.println("Vui lòng nhập thông tin thêm của sản phẩm: ");
         String newInformation = sc.nextLine();
         Product product = new Product();
-        for (int i = 0; i < productList.length; i++) {
-            if(productList[i] != null) {
-                productList[i] = product;
-                break;
+//        for (int i = 0; i < productList.length; i++) {
+//            if(productList[i] != null) {
+//                productList[i] = product;
+//                break;
             }
-        }
-    }
-    public static void display() {
-        for (int i = 0; i < productList.length; i++) {
-            if (productList[i] != null) {
-                System.out.println(productList[i]);
-            }
-        }
-    }
+//        }
+//    }
+//    public static void display() {
+//        for (int i = 0; i < productList.length; i++) {
+//            if (productList[i] != null) {
+//                System.out.println(productList[i]);
+//            }
+//        }
+//    }
     public void writeFile(Product[] productList) throws IOException {
         FileOutputStream fileOutputStream = new FileOutputStream("product_list.txt");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
