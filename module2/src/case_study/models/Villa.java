@@ -43,4 +43,16 @@ public class Villa extends Facility {
     public void setNumberOfFloor(int numberOfFloor) {
         this.numberOfFloor = numberOfFloor;
     }
+
+    @Override
+    public String toString() {
+        return "Villa{" +
+                "roomStandard='" + roomStandard + '\'' +
+                ", poolArea='" + poolArea + '\'' +
+                ", numberOfFloor=" + numberOfFloor +
+                '}';
+    }
+    public String getVillaString() {
+        return super.getFacilityString() + "," + getRoomStandard() + "," + getPoolArea() + "," + getNumberOfFloor();
+    }
 }

@@ -57,4 +57,19 @@ public abstract class Facility {
     public void setNameOfService(String nameOfService) {
         this.nameOfService = nameOfService;
     }
+
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "nameOfService='" + nameOfService + '\'' +
+                ", area=" + area +
+                ", roomRate=" + roomRate +
+                ", maximumPeople=" + maximumPeople +
+                ", typeOfRent='" + typeOfRent + '\'' +
+                '}';
+    }
+
+    public String getFacilityString() {
+        return getNameOfService() + "," + getArea() + "," + getRoomRate() + "," + getMaximumPeople() + "," + getTypeOfRent();
+    }
 }

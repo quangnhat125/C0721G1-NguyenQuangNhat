@@ -6,7 +6,7 @@ public class Customer extends Person {
     private String typeOfCustomer;
     private String address;
 
-    public Customer(String fullName, LocalDate dayOfBirth, int id, String gender, int phoneNumber, String email, String typeOfCustomer, String address) {
+    public Customer(String fullName, String dayOfBirth, int id, String gender, int phoneNumber, String email, String typeOfCustomer, String address) {
         super(fullName, dayOfBirth, id, gender, phoneNumber, email);
         this.typeOfCustomer = typeOfCustomer;
         this.address = address;
@@ -32,5 +32,17 @@ public class Customer extends Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "typeOfCustomer='" + typeOfCustomer + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
+    public String getCustomerString() {
+        return super.getString() + "," + getTypeOfCustomer() + "," + getAddress();
     }
 }
