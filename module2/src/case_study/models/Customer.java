@@ -3,19 +3,31 @@ package case_study.models;
 import java.time.LocalDate;
 
 public class Customer extends Person {
+    private String customerCode;
     private String typeOfCustomer;
     private String address;
 
-    public Customer(String fullName, String dayOfBirth, int id, String gender, int phoneNumber, String email, String typeOfCustomer, String address) {
+    public Customer(String fullName, String dayOfBirth, String id, String gender, String phoneNumber, String email, String customerCode, String typeOfCustomer, String address) {
         super(fullName, dayOfBirth, id, gender, phoneNumber, email);
+        this.customerCode = customerCode;
         this.typeOfCustomer = typeOfCustomer;
         this.address = address;
     }
 
-    public Customer(String typeOfCustomer, String address) {
+    public Customer(String customerCode, String typeOfCustomer, String address) {
+        this.customerCode = customerCode;
         this.typeOfCustomer = typeOfCustomer;
         this.address = address;
     }
+
+    public String getCustomerCode() {
+        return customerCode;
+    }
+
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
+    }
+
     public Customer(){}
 
     public String getTypeOfCustomer() {
@@ -36,13 +48,10 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "typeOfCustomer='" + typeOfCustomer + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+        return super.toString();
     }
 
     public String getCustomerString() {
-        return super.getString() + "," + getTypeOfCustomer() + "," + getAddress();
+        return super.getString() + "," + getCustomerCode() + "," + getTypeOfCustomer() + "," + getAddress();
     }
 }

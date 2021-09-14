@@ -1,20 +1,31 @@
 package case_study.controllers;
 
+import case_study.service.*;
+import case_study.service.implement.BookingServiceImplement;
+import case_study.service.implement.CustomerServiceImplement;
+import case_study.service.implement.EmployeeServiceImplement;
+import case_study.service.implement.FacilityServiceImplement;
+
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class FuramaController {
+    static IEmployee iEmployee = new EmployeeServiceImplement();
+    static ICustomer iCustomer = new CustomerServiceImplement();
+    static IFacility iFacility = new FacilityServiceImplement();
+    static IBooking iBooking = new BookingServiceImplement();
 
     public static void displayMainMenu() {
-        while(true) {
+        while (true) {
             Scanner sc = new Scanner(System.in);
             System.out.println("Menu: \n 1. Employee Management \n 2. Customer Management \n 3. Facility Management \n 4. Booking Management \n 5. Promotion Management \n 6. Exit");
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1:
-                    System.out.println("Please select option: \n 1. Display list employees \n 2. Add new employee \n 3. Edit employee \n 4. Return main menu");
+                    displayEmployeeManagement();
                     break;
                 case 2:
-                    System.out.println("Please select option: \n 1. Display list customers \n 2. Add new customer \n 3. Edit customer \n 4. Return main menu");
+                    displayCustomerManagement();
                     break;
                 case 3:
                     System.out.println("Please select option: \n 1. Display list facility \n 2. Add new facility \n 3. Display list facility maintenance \n 4. Return main menu");
@@ -32,5 +43,53 @@ public class FuramaController {
                     break;
             }
         }
+    }
+
+    public static void displayEmployeeManagement() {
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("EMPLOYEE MANAGEMENT: \n Please select option \n 1. Display list employees \n 2. Add new employee \n 3. Edit employee \n 4. Return main menu ");
+            int choice = Integer.parseInt(sc.nextLine());
+            switch (choice) {
+                case 1:
+                    iEmployee.displayService();
+                    break;
+                case 2:
+                    iEmployee.addService();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    displayMainMenu();
+                    break;
+
+            }
+        }
+    }
+
+    public static void displayCustomerManagement() {
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("CUSTOMER MANAGEMENT \n Please select option: \n 1. Display list customers \n 2. Add new customer \n 3. Edit customer \n 4. Return main menu");
+            int choice = Integer.parseInt(sc.nextLine());
+            switch (choice) {
+                case 1:
+                    iCustomer.displayService();
+                    break;
+                case 2:
+                    iCustomer.addService();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    displayMainMenu();
+                    break;
+
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        displayMainMenu();
     }
 }

@@ -4,6 +4,7 @@ import case_study.models.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -93,19 +94,19 @@ public class ReadAndWrite {
         List<Employee> employeeList = new ArrayList<>();
         for (int i = 0; i < stringList.size(); i++) {
             String[] array = stringList.get(i).split(",");
-            Employee employee = new Employee(array[0], array[1], Integer.parseInt(array[2]),
-                    array[3], Integer.parseInt(array[4]),array[5],Integer.parseInt(array[6]),array[7], array[8],Double.parseDouble(array[9]));
+            Employee employee = new Employee(array[0], array[1],array[2],
+                    array[3], array[4],array[5],array[6],array[7], array[8],Double.parseDouble(array[9]));
             employeeList.add(employee);
         }
         return employeeList;
     }
     public static List<Customer> getListCustomer(String path) {
         List<String> stringList = ReadCSVToString(path);
-        List<Customer> customersList = new ArrayList<>();
+        List<Customer> customersList = new LinkedList<>();
         for (int i = 0; i < stringList.size(); i++) {
             String[] array = stringList.get(i).split(",");
-            Customer customer = new Customer(array[0], array[1], Integer.parseInt(array[2]),
-                    array[3], Integer.parseInt(array[4]),array[5],array[6],array[7]);
+            Customer customer = new Customer(array[0], array[1], array[2],
+                    array[3], array[4],array[5],array[6],array[7], array[8]);
             customersList.add(customer);
         }
         return customersList;

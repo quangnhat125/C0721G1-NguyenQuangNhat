@@ -5,12 +5,12 @@ import java.time.LocalDate;
 public abstract class Person {
     private String fullName;
     private String dayOfBirth;
-    private int id;
+    private String id;
     private String gender;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
-    public Person(String fullName, String dayOfBirth, int id, String gender, int phoneNumber, String email) {
+    public Person(String fullName, String dayOfBirth, String id, String gender, String phoneNumber, String email) {
         this.fullName = fullName;
         this.dayOfBirth = dayOfBirth;
         this.id = id;
@@ -36,11 +36,11 @@ public abstract class Person {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -52,11 +52,11 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

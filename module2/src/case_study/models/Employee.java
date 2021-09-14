@@ -3,12 +3,12 @@ package case_study.models;
 import java.time.LocalDate;
 
 public class Employee extends Person {
-    private int idEmployee;
+    private String idEmployee;
     private String levelOfEducation;
     private String titleOfPosition;
     private double salary;
 
-    public Employee(String fullName, String dayOfBirth, int id, String gender, int phoneNumber, String email, int idEmployee, String levelOfEducation, String titleOfPosition, double salary) {
+    public Employee(String fullName, String dayOfBirth, String id, String gender, String phoneNumber, String email, String idEmployee, String levelOfEducation, String titleOfPosition, double salary) {
         super(fullName, dayOfBirth, id, gender, phoneNumber, email);
         this.idEmployee = idEmployee;
         this.levelOfEducation = levelOfEducation;
@@ -16,7 +16,7 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    public Employee(int idEmployee, String levelOfEducation, String titleOfPosition, double salary) {
+    public Employee(String idEmployee, String levelOfEducation, String titleOfPosition, double salary) {
         this.idEmployee = idEmployee;
         this.levelOfEducation = levelOfEducation;
         this.titleOfPosition = titleOfPosition;
@@ -24,11 +24,11 @@ public class Employee extends Person {
     }
     public Employee(){}
 
-    public int getIdEmployee() {
+    public String getIdEmployee() {
         return idEmployee;
     }
 
-    public void setIdEmployee(int idEmployee) {
+    public void setIdEmployee(String idEmployee) {
         this.idEmployee = idEmployee;
     }
 
@@ -66,6 +66,6 @@ public class Employee extends Person {
                 '}';
     }
      public String getString() {
-        return super.toString() + "," + getIdEmployee() + "," + getLevelOfEducation() + "," + getTitleOfPosition() + "," + getSalary();
+        return super.getString()+","+getIdEmployee()+","+getLevelOfEducation()+","+getTitleOfPosition()+","+getSalary();
      }
 }
