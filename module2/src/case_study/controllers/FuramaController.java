@@ -28,7 +28,7 @@ public class FuramaController {
                     displayCustomerManagement();
                     break;
                 case 3:
-                    System.out.println("Please select option: \n 1. Display list facility \n 2. Add new facility \n 3. Display list facility maintenance \n 4. Return main menu");
+                    displayFacilityManagement();
                     break;
                 case 4:
                     System.out.println("Please select option: \n 1. Add new booking \n 2. Display list booking \n 3. Create new contracts \n 4. Display list contracts \n 5. Edit contracts \n 6. Return main menu");
@@ -80,6 +80,28 @@ public class FuramaController {
                     iCustomer.addService();
                     break;
                 case 3:
+                    break;
+                case 4:
+                    displayMainMenu();
+                    break;
+
+            }
+        }
+    }
+    public static void displayFacilityManagement() {
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("FACILITY MANAGEMENT \n Please select option: \n 1. Display list facility \n 2. Add new facility \n 3. Display list facility maintenance \n 4. Return main menu");
+            int choice = Integer.parseInt(sc.nextLine());
+            switch (choice) {
+                case 1:
+                    iFacility.displayService();
+                    break;
+                case 2:
+                    iFacility.addService();
+                    break;
+                case 3:
+                    iFacility.displayForMaintaining();
                     break;
                 case 4:
                     displayMainMenu();

@@ -50,7 +50,7 @@ public class Villa extends Facility {
                 "roomStandard='" + roomStandard + '\'' +
                 ", poolArea='" + poolArea + '\'' +
                 ", numberOfFloor=" + numberOfFloor +
-                '}';
+                '}' + super.toString();
     }
     public String getVillaString() {
         return super.getFacilityString() + "," + getRoomStandard() + "," + getPoolArea() + "," + getNumberOfFloor();
