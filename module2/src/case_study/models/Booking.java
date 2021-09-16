@@ -3,14 +3,14 @@ package case_study.models;
 import java.time.LocalDate;
 
 public class Booking {
-    private int idBooking;
-    private LocalDate dayStart;
-    private LocalDate dayEnd;
-    private int idCustomer;
+    private String idBooking;
+    private String dayStart;
+    private String dayEnd;
+    private String idCustomer;
     private String nameOfService;
     private String typeOfService;
 
-    public Booking(int idBooking, LocalDate dayStart, LocalDate dayEnd, int idCustomer, String nameOfService, String typeOfService) {
+    public Booking(String idBooking, String dayStart, String dayEnd, String idCustomer, String nameOfService, String typeOfService) {
         this.idBooking = idBooking;
         this.dayStart = dayStart;
         this.dayEnd = dayEnd;
@@ -21,35 +21,35 @@ public class Booking {
     public Booking(){
     }
 
-    public int getIdBooking() {
+    public String getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(int idBooking) {
+    public void setIdBooking(String idBooking) {
         this.idBooking = idBooking;
     }
 
-    public LocalDate getDayStart() {
+    public String getDayStart() {
         return dayStart;
     }
 
-    public void setDayStart(LocalDate dayStart) {
+    public void setDayStart(String dayStart) {
         this.dayStart = dayStart;
     }
 
-    public LocalDate getDayEnd() {
+    public String getDayEnd() {
         return dayEnd;
     }
 
-    public void setDayEnd(LocalDate dayEnd) {
+    public void setDayEnd(String dayEnd) {
         this.dayEnd = dayEnd;
     }
 
-    public int getIdCustomer() {
+    public String getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(int idCustomer) {
+    public void setIdCustomer(String idCustomer) {
         this.idCustomer = idCustomer;
     }
 
@@ -84,4 +84,5 @@ public class Booking {
     public String getBookingString() {
         return getIdBooking() + "," + getDayStart() + "," + getDayEnd() + "," + getIdCustomer() + "," + getNameOfService() + "," + getTypeOfService();
     }
+
 }

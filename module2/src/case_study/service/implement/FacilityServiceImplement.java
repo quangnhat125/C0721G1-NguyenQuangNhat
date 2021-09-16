@@ -1,5 +1,6 @@
 package case_study.service.implement;
 
+import case_study.controllers.FuramaController;
 import case_study.models.House;
 import case_study.models.Room;
 import case_study.models.Villa;
@@ -20,7 +21,7 @@ public class FacilityServiceImplement implements IFacility {
     @Override
     public void addService() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please choose your option: \n 1. Add new Villa service \n 2. Add new House service \n 3. Add new Room service");
+        System.out.println("Please choose your option: \n 1. Add new Villa service \n 2. Add new House service \n 3. Add new Room service \n 4. Back to main menu");
         int choice = Integer.parseInt(sc.nextLine());
         switch (choice) {
             case 1:
@@ -32,9 +33,11 @@ public class FacilityServiceImplement implements IFacility {
             case 3:
                 addRoomService();
                 break;
-            default:
-                System.out.println("Please choose again!");
+            case 4:
+                FuramaController.displayFacilityManagement();
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + choice);
         }
     }
 
@@ -126,7 +129,7 @@ public class FacilityServiceImplement implements IFacility {
         roomMap.put(room, 0);
         ReadAndWrite.WriteRoomToCSV(roomMap, roomFilePath, false);
     }
-    @Override
+
     public void displayForMaintaining() {
         Map<Villa, Integer> villaMap = ReadAndWrite.getVillaMap(villaFilePath);
         Map<House, Integer> houseMap = ReadAndWrite.getHouseMap(houseFilePath);

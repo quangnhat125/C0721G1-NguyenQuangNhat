@@ -3,6 +3,7 @@ package case_study.utils;
 import case_study.models.*;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.*;
 
 public class ReadAndWrite {
@@ -61,9 +62,42 @@ public class ReadAndWrite {
 //        Write(stringList, path, append);
 //    }
 
-    public static void WriteStringBookingToCSV(TreeSet<Booking> bookingTreeSet, String path, boolean append) {
+    public static void WriteBookingTreeSetToCSV(TreeSet<Booking> bookingTreeSet, String path, boolean append) {
         List<String> stringList = new ArrayList<>();
+        TreeSet<Booking> bookingTree = new TreeSet<>();
+        for (Booking booking : bookingTree) {
+            stringList.add(booking.getBookingString());
+        }
+        Write(stringList, path, append);
     }
+    public static void WriteBookingTreeSetToQueue(Queue<Booking> bookingQueue, String path, boolean append) {
+        List<String> stringList = new ArrayList<>();
+        for (Booking booking : bookingQueue) {
+            stringList.add(booking.getBookingString());
+        }
+        Write(stringList, path, append);
+    }
+    public static TreeSet<Booking> getBookingTreeSet(String path) {
+        List<String> stringList = ReadCSVToString(path);
+        TreeSet<Booking> bookingTreeSet = new TreeSet<>();
+        for (int i = 0; i < stringList.size(); i++) {
+            String[] array = stringList.get(i).split(",");
+            Booking bookingTree = new Booking(array[0], array[1], array[2], array[3], array[4], array[5]);
+            bookingTreeSet.add(bookingTree);
+        }
+        return bookingTreeSet;
+    }
+    public static Queue<Booking> getBookingQueue(String path) {
+        List<String> stringList = ReadCSVToString(path);
+        Queue<Booking> bookingQueue = new LinkedList<>();
+        for (int i = 0; i < stringList.size(); i++) {
+            String[] array = stringList.get(i).split(",");
+            Booking booking = new Booking(array[0], array[1], array[2], array[3], array[4], array[5]);
+            bookingQueue.add(booking);
+        }
+        return bookingQueue;
+    }
+
 
     public static void WriteStringContractToCSV(TreeSet<Contract> bookingTreeSet, String path, boolean append) {
         List<String> stringList = new ArrayList<>();

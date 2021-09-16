@@ -5,6 +5,7 @@ import case_study.service.implement.BookingServiceImplement;
 import case_study.service.implement.CustomerServiceImplement;
 import case_study.service.implement.EmployeeServiceImplement;
 import case_study.service.implement.FacilityServiceImplement;
+import org.omg.PortableInterceptor.INACTIVE;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
@@ -31,7 +32,7 @@ public class FuramaController {
                     displayFacilityManagement();
                     break;
                 case 4:
-                    System.out.println("Please select option: \n 1. Add new booking \n 2. Display list booking \n 3. Create new contracts \n 4. Display list contracts \n 5. Edit contracts \n 6. Return main menu");
+                    displayBookingManagement();
                     break;
                 case 5:
                     System.out.println("Please select option: \n 1. Display list customers use service \n 2. Display list customers get voucher \n 3. Return main menu");
@@ -39,7 +40,7 @@ public class FuramaController {
                 case 6:
                     System.exit(0);
                 default:
-                    System.out.println("Vui lòng nhập lại yêu cầu!");
+                    System.out.println("Please enter again!");
                     break;
             }
         }
@@ -107,6 +108,29 @@ public class FuramaController {
                     displayMainMenu();
                     break;
 
+            }
+        }
+    }
+    public static void displayBookingManagement() {
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("BOOKING MANAGEMENT \n Please select option: \n 1. Add new booking \n 2. Display list booking \n 3. Create new contracts \n 4. Display list contracts \n 5. Edit contracts \n 6. Return main menu");
+            int choice = Integer.parseInt(sc.nextLine());
+            switch(choice) {
+                case 1:
+                    iBooking.addService();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    displayMainMenu();
+                    break;
             }
         }
     }
