@@ -1,34 +1,36 @@
 package case_study.models;
 
 public class Contract {
-    private int idContract;
-    private int idBooking;
+    private String idContract;
+    private String idBooking;
     private double amountOfDeposit;
     private double totalPay;
-    private int idCustomer;
+    private String idCustomer;
 
-    public Contract(int idContract, int idBooking, double amountOfDeposit, double totalPay, int idCustomer) {
+    public Contract(String idContract, String idBooking, double amountOfDeposit, double totalPay, String idCustomer) {
         this.idContract = idContract;
         this.idBooking = idBooking;
         this.amountOfDeposit = amountOfDeposit;
         this.totalPay = totalPay;
         this.idCustomer = idCustomer;
     }
-    public Contract(){}
 
-    public int getIdContract() {
+    public Contract() {
+    }
+
+    public String getIdContract() {
         return idContract;
     }
 
-    public void setIdContract(int idContract) {
+    public void setIdContract(String idContract) {
         this.idContract = idContract;
     }
 
-    public int getIdBooking() {
+    public String getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(int idBooking) {
+    public void setIdBooking(String idBooking) {
         this.idBooking = idBooking;
     }
 
@@ -48,11 +50,27 @@ public class Contract {
         this.totalPay = totalPay;
     }
 
-    public int getIdCustomer() {
+    public String getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(int idCustomer) {
+    public void setIdCustomer(String idCustomer) {
         this.idCustomer = idCustomer;
     }
+
+    @Override
+    public String toString() {
+        return "Contract{" +
+                "idContract=" + idContract +
+                ", idBooking=" + idBooking +
+                ", amountOfDeposit=" + amountOfDeposit +
+                ", totalPay=" + totalPay +
+                ", idCustomer=" + idCustomer +
+                '}';
+    }
+
+    public String getContractString() {
+        return getIdContract() + "," + getIdBooking() + "," + getAmountOfDeposit() + "," + getTotalPay() + "," + getIdCustomer();
+    }
 }
+

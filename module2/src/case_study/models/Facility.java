@@ -1,21 +1,32 @@
 package case_study.models;
 
 public abstract class Facility {
+    private String IdNameOfService;
     private String nameOfService;
     private double area;
     private int roomRate;
     private int maximumPeople;
     private String typeOfRent;
 
+
     public Facility() {
     }
 
-    public Facility(String nameOfService,double area, int roomRate, int maximumPeople, String typeOfRent) {
+    public Facility(String idNameOfService, String nameOfService, double area, int roomRate, int maximumPeople, String typeOfRent) {
+        IdNameOfService = idNameOfService;
         this.nameOfService = nameOfService;
         this.area = area;
         this.roomRate = roomRate;
         this.maximumPeople = maximumPeople;
         this.typeOfRent = typeOfRent;
+    }
+
+    public String getIdNameOfService() {
+        return IdNameOfService;
+    }
+
+    public void setIdNameOfService(String idNameOfService) {
+        IdNameOfService = idNameOfService;
     }
 
     public double getArea() {
@@ -61,7 +72,8 @@ public abstract class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "nameOfService='" + nameOfService + '\'' +
+                "IdNameOfService='" + IdNameOfService + '\'' +
+                ", nameOfService='" + nameOfService + '\'' +
                 ", area=" + area +
                 ", roomRate=" + roomRate +
                 ", maximumPeople=" + maximumPeople +
@@ -70,6 +82,6 @@ public abstract class Facility {
     }
 
     public String getFacilityString() {
-        return getNameOfService() + "," + getArea() + "," + getRoomRate() + "," + getMaximumPeople() + "," + getTypeOfRent();
+        return getIdNameOfService() + "," + getNameOfService() + "," + getArea() + "," + getRoomRate() + "," + getMaximumPeople() + "," + getTypeOfRent();
     }
 }

@@ -1,6 +1,7 @@
 package case_study.utils;
 
 import case_study.models.*;
+import sun.reflect.generics.tree.Tree;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -64,12 +65,12 @@ public class ReadAndWrite {
 
     public static void WriteBookingTreeSetToCSV(TreeSet<Booking> bookingTreeSet, String path, boolean append) {
         List<String> stringList = new ArrayList<>();
-        TreeSet<Booking> bookingTree = new TreeSet<>();
-        for (Booking booking : bookingTree) {
+        for (Booking booking : bookingTreeSet) {
             stringList.add(booking.getBookingString());
         }
         Write(stringList, path, append);
     }
+
     public static void WriteBookingTreeSetToQueue(Queue<Booking> bookingQueue, String path, boolean append) {
         List<String> stringList = new ArrayList<>();
         for (Booking booking : bookingQueue) {
@@ -77,6 +78,7 @@ public class ReadAndWrite {
         }
         Write(stringList, path, append);
     }
+
     public static TreeSet<Booking> getBookingTreeSet(String path) {
         List<String> stringList = ReadCSVToString(path);
         TreeSet<Booking> bookingTreeSet = new TreeSet<>();
@@ -87,6 +89,7 @@ public class ReadAndWrite {
         }
         return bookingTreeSet;
     }
+
     public static Queue<Booking> getBookingQueue(String path) {
         List<String> stringList = ReadCSVToString(path);
         Queue<Booking> bookingQueue = new LinkedList<>();
@@ -99,8 +102,23 @@ public class ReadAndWrite {
     }
 
 
-    public static void WriteStringContractToCSV(TreeSet<Contract> bookingTreeSet, String path, boolean append) {
+    public static void WriteContractStringToCSV(List<Contract> contractList, String path, boolean append) {
         List<String> stringList = new ArrayList<>();
+        for (Contract contract : contractList) {
+            stringList.add(contract.getContractString());
+        }
+        Write(stringList, path, append);
+
+    }
+    public static List<Contract> getContractList(String path) {
+        List<String> stringList = ReadCSVToString(path);
+        List<Contract> contractList = new ArrayList<>();
+        for (int i = 0; i < stringList.size(); i++) {
+            String[] array = stringList.get(i).split(",");
+            Contract contract = new Contract(array[0], array[1], Double.parseDouble(array[2]), Double.parseDouble(array[3]),array[4]);
+            contractList.add(contract);
+        }
+        return contractList;
     }
 
     public static List<String> ReadCSVToString(String path) {
@@ -183,27 +201,6 @@ public class ReadAndWrite {
 //        return roomList;
 //    }
 
-//    public static Map<Villa, Integer> readFacilitytoString(String path) {
-//        Map<Facility, Integer> facilityList = new LinkedHashMap<>();
-//        File file = new File(path);
-//        try {
-//            if (!file.exists()) {
-//                throw new FileNotFoundException();
-//            }
-//            FileReader fileReader = new FileReader(file);
-//            BufferedReader bufferedReader = new BufferedReader(fileReader);
-//            String line = "";
-//            while ((line = bufferedReader.readLine()) != null) {
-//                facilityList.put(line, 0);
-//
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return facilityList;
-//    }
 
     public static void WriteVillaToCSV(Map<Villa, Integer> villaMap, String path, boolean append) {
         List<String> stringList = new ArrayList<>();
@@ -219,7 +216,7 @@ public class ReadAndWrite {
         Map<Villa, Integer> villaMap = new LinkedHashMap<>();
         for (int i = 0; i < stringList.size(); i++) {
             String[] array = stringList.get(i).split(",");
-            Villa villa = new Villa(array[0], Double.parseDouble(array[1]), Integer.parseInt(array[2]), Integer.parseInt(array[3]), array[4], array[5], array[6], Integer.parseInt(array[7]));
+            Villa villa = new Villa(array[0],array[1], Double.parseDouble(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4]), array[5], array[6], array[7], Integer.parseInt(array[8]));
             villaMap.put(villa, Integer.parseInt(array[8]));
 
         }
@@ -240,7 +237,7 @@ public class ReadAndWrite {
         Map<House, Integer> houseMap = new LinkedHashMap<>();
         for (int i = 0; i < stringList.size(); i++) {
             String[] array = stringList.get(i).split(",");
-            House house = new House(array[0], Double.parseDouble(array[1]), Integer.parseInt(array[2]), Integer.parseInt(array[3]), array[4], array[5], Integer.parseInt(array[6]));
+            House house = new House(array[0], array[1], Double.parseDouble(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4]), array[5], array[6], Integer.parseInt(array[7]));
             houseMap.put(house, Integer.parseInt(array[7]));
         }
         return houseMap;
@@ -260,7 +257,7 @@ public class ReadAndWrite {
         Map<Room, Integer> roomMap = new LinkedHashMap<>();
         for (int i = 0; i < stringList.size(); i++) {
             String[] array = stringList.get(i).split(",");
-            Room room = new Room(array[0], Double.parseDouble(array[1]), Integer.parseInt(array[2]), Integer.parseInt(array[3]), array[4], array[5]);
+            Room room = new Room(array[0],array[1], Double.parseDouble(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4]), array[5], array[6]);
             roomMap.put(room, Integer.parseInt(array[6]));
         }
         return roomMap;

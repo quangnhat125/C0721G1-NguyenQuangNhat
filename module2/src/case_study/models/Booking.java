@@ -1,8 +1,9 @@
 package case_study.models;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Booking {
+public class Booking implements Comparable<Booking> {
     private String idBooking;
     private String dayStart;
     private String dayEnd;
@@ -18,7 +19,8 @@ public class Booking {
         this.nameOfService = nameOfService;
         this.typeOfService = typeOfService;
     }
-    public Booking(){
+
+    public Booking() {
     }
 
     public String getIdBooking() {
@@ -83,6 +85,40 @@ public class Booking {
 
     public String getBookingString() {
         return getIdBooking() + "," + getDayStart() + "," + getDayEnd() + "," + getIdCustomer() + "," + getNameOfService() + "," + getTypeOfService();
+    }
+
+
+
+    @Override
+    public int compareTo(Booking o) {
+        LocalDate thisStartDate = LocalDate.now();
+        LocalDate bookingStartDate = LocalDate.now();
+        LocalDate thisEndDate = LocalDate.now();
+        LocalDate bookingEndDate = LocalDate.now();
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try {
+            thisStartDate = LocalDate.parse(getDayStart(), dateTimeFormatter);
+
+            bookingStartDate = LocalDate.parse(o.getDayStart(), dateTimeFormatter);
+
+            thisEndDate = LocalDate.parse(getDayEnd(), dateTimeFormatter);
+
+            bookingEndDate = LocalDate.parse(o.getDayEnd(), dateTimeFormatter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (thisStartDate.compareTo(bookingStartDate) == 0) {
+            if (thisEndDate.compareTo(bookingEndDate) > 0) {
+                return 1;
+            } else {
+                return -1;
+            }
+        } else if (thisStartDate.compareTo(bookingStartDate) > 0) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 
 }

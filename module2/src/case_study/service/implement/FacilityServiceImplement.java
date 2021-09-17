@@ -67,6 +67,8 @@ public class FacilityServiceImplement implements IFacility {
     public void addVillaService() {
         Scanner sc = new Scanner(System.in);
         Map<Villa, Integer> villaMap = ReadAndWrite.getVillaMap(villaFilePath);
+        System.out.println("Please enter name of service's ID:");
+        String idNameOfService = sc.nextLine();
         System.out.println("Please enter name of service: ");
         String nameOfService = sc.nextLine();
         System.out.println("Please enter villa's area: ");
@@ -83,7 +85,7 @@ public class FacilityServiceImplement implements IFacility {
         String villaPool = sc.nextLine();
         System.out.println("Please enter villa's number of floor:  ");
         int villaFloor = Integer.parseInt(sc.nextLine());
-        Villa villa = new Villa(nameOfService, villaArea, villaRate, villaMaxPeople, villaTypeRent, villaStandard, villaPool, villaFloor);
+        Villa villa = new Villa(idNameOfService,nameOfService, villaArea, villaRate, villaMaxPeople, villaTypeRent, villaStandard, villaPool, villaFloor);
         villaMap.put(villa, 0);
         ReadAndWrite.WriteVillaToCSV(villaMap, villaFilePath, false);
     }
@@ -91,6 +93,8 @@ public class FacilityServiceImplement implements IFacility {
     public void addHouseService() {
         Scanner sc = new Scanner(System.in);
         Map<House, Integer> houseMap = ReadAndWrite.getHouseMap(houseFilePath);
+        System.out.println("Please enter name of service's ID:");
+        String idNameOfService = sc.nextLine();
         System.out.println("Please enter name of service: ");
         String nameOfService = sc.nextLine();
         System.out.println("Please enter house's area: ");
@@ -105,7 +109,7 @@ public class FacilityServiceImplement implements IFacility {
         String houseStandard = sc.nextLine();
         System.out.println("Please enter villa's number of floor:  ");
         int houseFloor = Integer.parseInt(sc.nextLine());
-        House house = new House(nameOfService, houseArea, houseRate, houseMaxPeople, houseTypeRent, houseStandard, houseFloor);
+        House house = new House(idNameOfService,nameOfService, houseArea, houseRate, houseMaxPeople, houseTypeRent, houseStandard, houseFloor);
         houseMap.put(house, 0);
         ReadAndWrite.WriteHouseToCSV(houseMap, houseFilePath, false);
     }
@@ -113,6 +117,8 @@ public class FacilityServiceImplement implements IFacility {
     public void addRoomService() {
         Scanner sc = new Scanner(System.in);
         Map<Room, Integer> roomMap = ReadAndWrite.getRoomMap(roomFilePath);
+        System.out.println("Please enter name of service's ID:");
+        String idNameOfService = sc.nextLine();
         System.out.println("Please enter name of service: ");
         String nameOfService = sc.nextLine();
         System.out.println("Please enter room's area: ");
@@ -125,7 +131,7 @@ public class FacilityServiceImplement implements IFacility {
         String roomTypeRent = sc.nextLine();
         System.out.println("Please enter room's freeServiceIncluded: ");
         String roomFreeService = sc.nextLine();
-        Room room = new Room(nameOfService, roomArea, roomRate, roomMaxPeople, roomTypeRent, roomFreeService);
+        Room room = new Room(idNameOfService,nameOfService, roomArea, roomRate, roomMaxPeople, roomTypeRent, roomFreeService);
         roomMap.put(room, 0);
         ReadAndWrite.WriteRoomToCSV(roomMap, roomFilePath, false);
     }
@@ -159,7 +165,7 @@ public class FacilityServiceImplement implements IFacility {
 //            System.out.println(entry.getKey().toString());
 //        }
 //        }
-    public void addTimesOfUsing(String nameOfService) {
+    public void addTimesOfUsing(String idNameOfService) {
         Map<Villa, Integer> villaMap = ReadAndWrite.getVillaMap(villaFilePath);
         Map<House, Integer> houseMap = ReadAndWrite.getHouseMap(houseFilePath);
         Map<Room, Integer> roomMap = ReadAndWrite.getRoomMap(roomFilePath);
@@ -170,19 +176,19 @@ public class FacilityServiceImplement implements IFacility {
 //            }
 //        }
         for (Map.Entry<Villa, Integer> entry : villaMap.entrySet()) {
-            if (entry.getKey().getNameOfService().equals(nameOfService)) {
+            if (entry.getKey().getIdNameOfService().equals(idNameOfService)) {
                 entry.setValue(entry.getValue() + 1);
             }
             ReadAndWrite.WriteVillaToCSV(villaMap, villaFilePath, false);
         }
         for (Map.Entry<House, Integer> entry : houseMap.entrySet()) {
-            if (entry.getKey().getNameOfService().equals(nameOfService)) {
+            if (entry.getKey().getIdNameOfService().equals(idNameOfService)) {
                 entry.setValue(entry.getValue() + 1);
             }
             ReadAndWrite.WriteHouseToCSV(houseMap, houseFilePath, false);
         }
         for (Map.Entry<Room, Integer> entry : roomMap.entrySet()) {
-            if (entry.getKey().getNameOfService().equals(nameOfService)) {
+            if (entry.getKey().getIdNameOfService().equals(idNameOfService)) {
                 entry.setValue(entry.getValue() + 1);
             }
             ReadAndWrite.WriteRoomToCSV(roomMap, roomFilePath, false);

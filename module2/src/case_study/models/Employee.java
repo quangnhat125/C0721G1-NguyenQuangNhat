@@ -63,7 +63,7 @@ public class Employee extends Person {
                 ", levelOfEducation='" + levelOfEducation + '\'' +
                 ", titleOfPosition='" + titleOfPosition + '\'' +
                 ", salary=" + salary +
-                '}';
+                '}' + super.toString();
     }
      public String getString() {
         return super.getString()+","+getIdEmployee()+","+getLevelOfEducation()+","+getTitleOfPosition()+","+getSalary();

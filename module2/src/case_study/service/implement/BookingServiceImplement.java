@@ -4,8 +4,10 @@ import case_study.models.*;
 import case_study.service.IBooking;
 import case_study.service.IFacility;
 import case_study.utils.ReadAndWrite;
+import case_study.models.Booking;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class BookingServiceImplement implements IBooking {
@@ -13,38 +15,54 @@ public class BookingServiceImplement implements IBooking {
     static String villaFilePath = "src\\case_study\\data\\villa.csv";
     static String houseFilePath = "src\\case_study\\data\\house.csv";
     static String roomFilePath = "src\\case_study\\data\\room.csv";
-    String bookingQueueFilePath = "src\\case_study\\data\\bookingqueue.csv";
-    String bookingFilePath = "src\\case_study\\data\\booking.csv";
+    static String bookingQueueFilePath = "src\\case_study\\data\\bookingqueue.csv";
+    static String bookingFilePath = "src\\case_study\\data\\booking.csv";
+    static String booking1FilePath = "src\\case_study\\data\\booking1.csv";
     IFacility iFacility = new FacilityServiceImplement();
 
     @Override
     public void addService() {
-        Scanner sc = new Scanner(System.in);
         TreeSet<Booking> bookingTreeSet = ReadAndWrite.getBookingTreeSet(bookingFilePath);
         Queue<Booking> bookingQueue = ReadAndWrite.getBookingQueue(bookingQueueFilePath);
-        System.out.println("Enter Booking's ID: ");
-        String bookingId = sc.nextLine();
-        System.out.println("Enter Booking's day start: ");
-        String bookingStart = sc.nextLine();
-        System.out.println("Enter Booking's day end: ");
-        String bookingEnd = sc.nextLine();
-        System.out.println("Enter Booking's customer ID: ");
-        String bookingCustomerID = customerCodeList();
-        System.out.println("Enter Booking's name of service: ");
-        String bookingNameService = nameOfService();
-        System.out.println("Enter Booking's type of service: ");
-        String bookingTypeService = chooseTypeOfService();
-        Booking booking = new Booking(bookingId, bookingStart, bookingEnd, bookingCustomerID, bookingNameService, bookingTypeService);
-        bookingTreeSet.add(booking);
-        ReadAndWrite.WriteBookingTreeSetToCSV(bookingTreeSet, bookingFilePath, false);
-        iFacility.addTimesOfUsing(bookingNameService);
-        displayService();
-        for (Booking b : bookingTreeSet) {
-            if (b.getTypeOfService().equals("Villa") || b.getTypeOfService().equals("House")) {
-                bookingQueue.add(b);
+        String nameOfService = nameOfService();
+        String customerCode = customerCodeList();
+        Scanner sc = new Scanner(System.in);
+        String bookingId = "";
+        boolean flag = true;
+        while (flag) {
+            try {
+                System.out.println("Enter Booking's ID");
+                bookingId = sc.nextLine();
+                flag = false;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            for (Booking booking : bookingTreeSet) {
+                if (booking.getIdBooking().equals(bookingId)) {
+                    System.out.println("The booking iD is exist! \n Please enter again");
+                }
             }
         }
-        ReadAndWrite.WriteBookingTreeSetToQueue(bookingQueue, bookingQueueFilePath, false);
+        try {
+            System.out.println("Enter Booking's day start: ");
+            String bookingStart = sc.nextLine();
+            System.out.println("Enter Booking's day end: ");
+            String bookingEnd = sc.nextLine();
+            System.out.println("Enter Booking's type of service: ");
+            String bookingTypeService = chooseTypeOfService();
+            Booking booking = new Booking(bookingId, bookingStart, bookingEnd, customerCode, nameOfService, bookingTypeService);
+            bookingTreeSet.add(booking);
+            ReadAndWrite.WriteBookingTreeSetToCSV(bookingTreeSet, booking1FilePath, false);
+            iFacility.addTimesOfUsing(nameOfService);
+            displayService();
+            if (booking.getTypeOfService().equals("Villa") || booking.getTypeOfService().equals("House")) {
+                bookingQueue.add(booking);
+            }
+            ReadAndWrite.WriteBookingTreeSetToQueue(bookingQueue, bookingQueueFilePath, false);
+            displayService();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -67,40 +85,40 @@ public class BookingServiceImplement implements IBooking {
         Set<Villa> villaSet = villaMap.keySet();
         Set<House> houseSet = houseMap.keySet();
         Set<Room> roomSet = roomMap.keySet();
-        List<String> nameOfService = new ArrayList<>();
+        List<String> IDOfService = new ArrayList<>();
         System.out.println("List of villa's name service: ");
         for (Villa villaKey : villaSet) {
-            System.out.println(villaKey.getNameOfService());
-            nameOfService.add(villaKey.getNameOfService());
+            System.out.println(villaKey.getIdNameOfService());
+            IDOfService.add(villaKey.getIdNameOfService());
         }
         System.out.println("List of house's name service: ");
         for (House houseKey : houseSet) {
-            System.out.println(houseKey.getNameOfService());
-            nameOfService.add(houseKey.getNameOfService());
+            System.out.println(houseKey.getIdNameOfService());
+            IDOfService.add(houseKey.getIdNameOfService());
         }
         System.out.println("List of room's name service: ");
         for (Room roomKey : roomSet) {
-            System.out.println(roomKey.getNameOfService());
-            nameOfService.add(roomKey.getNameOfService());
+            System.out.println(roomKey.getIdNameOfService());
+            IDOfService.add(roomKey.getIdNameOfService());
         }
         boolean flag = true;
         boolean check = true;
-        String inputNameOfService = "";
+        String inputIdNameOfService = "";
         while (flag) {
             System.out.println("Please enter name of service: ");
-            inputNameOfService = sc.nextLine();
-            for (String string : nameOfService) {
-                if (string.equals(inputNameOfService)) {
+            inputIdNameOfService = sc.nextLine();
+            for (String string : IDOfService) {
+                if (string.equals(inputIdNameOfService)) {
                     flag = false;
                     check = false;
                     break;
                 }
             }
-            if (!check) {
+            if (check) {
                 System.out.println("Cannot find name of service! Please enter again");
             }
         }
-        return inputNameOfService;
+        return inputIdNameOfService;
     }
 
     public String customerCodeList() {
@@ -117,19 +135,20 @@ public class BookingServiceImplement implements IBooking {
             System.out.println("Please enter customer's code: ");
             inputCustomerCode = sc.nextLine();
             for (Customer customer : customerList) {
-                if (customer.equals(customerList)) {
+                if (customer.getCustomerCode().equals(inputCustomerCode)) {
                     flag = false;
                     check = false;
                     break;
                 }
             }
-            if (!check) {
+            if (check) {
                 System.out.println("Cannot find customer's code! Please enter again");
             }
         }
         return inputCustomerCode;
 
     }
+
     private String chooseTypeOfService() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Choose type of service: ");
@@ -156,4 +175,6 @@ public class BookingServiceImplement implements IBooking {
         }
         return serviceType;
     }
+
+
 }
