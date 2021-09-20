@@ -22,9 +22,9 @@ public class BookingServiceImplement implements IBooking {
 
     @Override
     public void addService() {
-        TreeSet<Booking> bookingTreeSet = ReadAndWrite.getBookingTreeSet(bookingFilePath);
+        TreeSet<Booking> bookingTreeSet = ReadAndWrite.getBookingTreeSet(booking1FilePath);
         Queue<Booking> bookingQueue = ReadAndWrite.getBookingQueue(bookingQueueFilePath);
-        String nameOfService = nameOfService();
+        String iDNameOfService = iDNameOfService();
         String customerCode = customerCodeList();
         Scanner sc = new Scanner(System.in);
         String bookingId = "";
@@ -50,10 +50,10 @@ public class BookingServiceImplement implements IBooking {
             String bookingEnd = sc.nextLine();
             System.out.println("Enter Booking's type of service: ");
             String bookingTypeService = chooseTypeOfService();
-            Booking booking = new Booking(bookingId, bookingStart, bookingEnd, customerCode, nameOfService, bookingTypeService);
+            Booking booking = new Booking(bookingId, bookingStart, bookingEnd, customerCode, iDNameOfService, bookingTypeService);
             bookingTreeSet.add(booking);
             ReadAndWrite.WriteBookingTreeSetToCSV(bookingTreeSet, booking1FilePath, false);
-            iFacility.addTimesOfUsing(nameOfService);
+            iFacility.addTimesOfUsing(iDNameOfService);
             displayService();
             if (booking.getTypeOfService().equals("Villa") || booking.getTypeOfService().equals("House")) {
                 bookingQueue.add(booking);
@@ -67,7 +67,7 @@ public class BookingServiceImplement implements IBooking {
 
     @Override
     public void displayService() {
-        TreeSet<Booking> bookingTreeSet = ReadAndWrite.getBookingTreeSet(bookingFilePath);
+        TreeSet<Booking> bookingTreeSet = ReadAndWrite.getBookingTreeSet(booking1FilePath);
         for (Booking booking : bookingTreeSet) {
             System.out.println(booking.toString());
         }
@@ -77,7 +77,7 @@ public class BookingServiceImplement implements IBooking {
     public void editService() {
     }
 
-    public String nameOfService() {
+    public String iDNameOfService() {
         Scanner sc = new Scanner(System.in);
         Map<Villa, Integer> villaMap = ReadAndWrite.getVillaMap(villaFilePath);
         Map<House, Integer> houseMap = ReadAndWrite.getHouseMap(houseFilePath);
@@ -104,19 +104,24 @@ public class BookingServiceImplement implements IBooking {
         boolean flag = true;
         boolean check = true;
         String inputIdNameOfService = "";
-        while (flag) {
-            System.out.println("Please enter name of service: ");
-            inputIdNameOfService = sc.nextLine();
-            for (String string : IDOfService) {
-                if (string.equals(inputIdNameOfService)) {
-                    flag = false;
-                    check = false;
-                    break;
+        try {
+            while (flag) {
+                System.out.println("Please enter name of service: ");
+                inputIdNameOfService = sc.nextLine();
+                for (String string : IDOfService) {
+                    if (string.equals(inputIdNameOfService)) {
+                        flag = false;
+                        check = false;
+                        break;
+                    }
+                }
+                if (check) {
+                    System.out.println("Cannot find name of service! Please enter again");
                 }
             }
-            if (check) {
-                System.out.println("Cannot find name of service! Please enter again");
-            }
+            return inputIdNameOfService;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return inputIdNameOfService;
     }
@@ -131,50 +136,60 @@ public class BookingServiceImplement implements IBooking {
         boolean flag = true;
         boolean check = true;
         String inputCustomerCode = "";
-        while (flag) {
-            System.out.println("Please enter customer's code: ");
-            inputCustomerCode = sc.nextLine();
-            for (Customer customer : customerList) {
-                if (customer.getCustomerCode().equals(inputCustomerCode)) {
-                    flag = false;
-                    check = false;
-                    break;
+        try {
+            while (flag) {
+                System.out.println("Please enter customer's code: ");
+                inputCustomerCode = sc.nextLine();
+                for (Customer customer : customerList) {
+                    if (customer.getCustomerCode().equals(inputCustomerCode)) {
+                        flag = false;
+                        check = false;
+                        break;
+                    }
+                }
+                if (check) {
+                    System.out.println("Cannot find customer's code! Please enter again");
                 }
             }
-            if (check) {
-                System.out.println("Cannot find customer's code! Please enter again");
-            }
+            return inputCustomerCode;
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return inputCustomerCode;
-
     }
 
     private String chooseTypeOfService() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Choose type of service: ");
-        String serviceType;
+        String serviceType = "";
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Choose type of service: ");
 
-        System.out.println("Choose type of service: "
-                + "1.Villa \n"
-                + "2.House \n"
-                + "3.Room \n"
-        );
-        String choose = sc.nextLine();
-        switch (choose) {
-            case "1":
-                serviceType = "Villa";
-                break;
-            case "2":
-                serviceType = "House";
-                break;
-            case "3":
-                serviceType = "Room";
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + choose);
+            System.out.println("Choose type of service: "
+                    + "1.Villa \n"
+                    + "2.House \n"
+                    + "3.Room \n"
+            );
+            String choose = sc.nextLine();
+            switch (choose) {
+                case "1":
+                    serviceType = "Villa";
+                    break;
+                case "2":
+                    serviceType = "House";
+                    break;
+                case "3":
+                    serviceType = "Room";
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + choose);
+            }
+            return serviceType;
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
         }
+
         return serviceType;
     }
-
 
 }

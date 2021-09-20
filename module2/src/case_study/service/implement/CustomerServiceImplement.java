@@ -202,7 +202,7 @@ public class CustomerServiceImplement implements ICustomer {
                     System.out.println("List after updated: ");
                     displayService();
                 } else {
-                    System.out.println("Cannot find the customer's code for editting! \n Please enter again ");
+                    System.out.println("Cannot find the customer's code for editing! \n Please enter again ");
                 }
             }
 
